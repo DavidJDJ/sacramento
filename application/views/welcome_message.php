@@ -30,9 +30,15 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <![endif]-->
  </head>
  <body>
-    <div class="container">
+<?php  
+include 'application/views/header.php';
 
+<<<<<<< HEAD
     </div>
+=======
+include 'application/views/footer.php';
+?>
+>>>>>>> parent of 32b14e7... latest updated on the views
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 </body>

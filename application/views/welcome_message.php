@@ -34,8 +34,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 include 'application/views/header.php';
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     </div>
 =======
+=======
+>>>>>>> parent of 32b14e7... latest updated on the views
 include 'application/views/footer.php';
 ?>
 >>>>>>> parent of 32b14e7... latest updated on the views

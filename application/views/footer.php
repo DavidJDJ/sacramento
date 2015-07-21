@@ -59,8 +59,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
   <center><i>Made with &lt;3 in Sacramento</i></center>
   <div class="row">
   <div class="social_media_footer">
-  <a href="http://fb.com"><img src="assets/img/facebook.png" alt="facebook_pic" height=40px width=40px></a>
-  <a href="http://twitter.com"><img src="assets/img/twitter.png" alt="twitter_pic" height=40px width=40px></a>
+  <a href="http://www.facebook.com/sacramentobox"><img src="assets/img/facebook.png" alt="facebook_pic" height=40px width=40px></a>
+  <a href="http://www.twitter.com/sacramentobox"><img src="assets/img/twitter.png" alt="twitter_pic" height=40px width=40px></a>
+  <a href="http://www.Instagram.com/sacramento_box"><img src="assets/img/instagram.png" alt="instagram_pic" height=40px width=40px></a>
   </div></div></div>
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>

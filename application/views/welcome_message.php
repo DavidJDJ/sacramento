@@ -30,9 +30,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <![endif]-->
  </head>
  <body>
-<?php  
-include 'application/views/header.php';
+    <div class="container">
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
     </div>
@@ -42,6 +42,9 @@ include 'application/views/header.php';
 include 'application/views/footer.php';
 ?>
 >>>>>>> parent of 32b14e7... latest updated on the views
+=======
+    </div>
+>>>>>>> parent of 107e59c... testing the commits
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 </body>

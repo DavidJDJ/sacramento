@@ -12,20 +12,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     {
       background-color: #C8D2D9;
     }
-    iframe{
-      width: 550px;
-      height: 435px;
-      display: inline-block;
-    }
-    #content{
-      width: 550px;
-      height: 435px;
-      display: inline-block;
-      text-align: justify;
-      vertical-align: top;
-      margin-top: 50px;
-      margin-left: 30px;
-    }
    </style>
     <title>Example Title</title>
 
@@ -44,6 +30,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <![endif]-->
  </head>
  <body>
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -99,6 +86,12 @@ include 'application/views/footer.php';
 >>>>>>> parent of 107e59c... testing the commits
 =======
 <?php include('footer.php');
+=======
+<?php  
+include 'application/views/header.php';
+
+include 'application/views/footer.php';
+>>>>>>> parent of 32b14e7... latest updated on the views
 ?>
 >>>>>>> parent of c0c043d... all views with empty welcome message submitted
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->

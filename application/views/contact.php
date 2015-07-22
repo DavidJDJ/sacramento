@@ -1,65 +1,164 @@
+<?php 
+      function this_page()
+      {
+          $page='contact'; 
+          return $page;
+      }
+?>
 <html>
   <head>
     <title>Products</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
-    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css"> -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+ <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+      <!--Google Fonts-->
+      <link href='http://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700' rel='stylesheet' type='text/css'>
+      <!--Bootstrap 3.3.2-->
+      <link href="../assets/index/css/bootstrap.min.css" rel="stylesheet" media="screen">
+      <!--Icon Fonts-->
+      <link href="../assets/index/css/font-awesome.min.css" rel="stylesheet" media="screen">
+      <link href="../assets/index/css/icon-moon.css" rel="stylesheet" media="screen">
+      <!--Animations-->
+      <link href="../assets/index/css/animate.css" rel="stylesheet" media="screen">
+      <!--Theme Styles-->
+      <link href="../assets/index/css/theme-styles.css" rel="stylesheet" media="screen">
+    <!--Color Schemes-->
+    <link class="color-scheme" href="../assets/index/css/colors/color-default.css" rel="stylesheet" media="screen">
+    <!--Modernizr-->
+        <script src="../assets/index/js/libs/modernizr.custom.js"></script>
+  
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>    
+    <script>$('document').ready(function() {
+      var msg = $('#message');
+      msg.autosize();
+    });
+    </script>
     <style>
-    #container {
-      margin: 25px;
-      padding: 30px;
-    }
-    label {
-      display: inline-block;
-      width: 100px;
-    }
-    .blocktext {
-    margin-left: auto;
-    margin-right: auto;
-    width: 700px;
-    }
+    @import url(http://fonts.googleapis.com/css?family=Oswald:400,700,300);
+.centered {
+  margin: 0 auto;
+  text-align: center;
+}
+.uppercase {
+  text-transform: uppercase;
+}
+.bottom-line {
+  border-bottom: 2px solid #c3c3c3;
+}
+::-webkit-resizer {
+  display: none;
+}
+body {
+  background-color: #e3e3e3;
+  color: #555555;
+  font-family: 'Oswald', sans-serif;
+  font-weight: 300;
+
+}
+body * {
+  outline: none !important;
+}
+header h1 {
+  text-transform: uppercase;
+  margin: 0 auto;
+  text-align: center;
+  border-bottom: 2px solid #c3c3c3;
+  background-color: #f7f7f7;
+  box-shadow: 0px 0px 100px rgba(0, 0, 0, 0.05);
+  color: #555555;
+  font-weight: 300;
+  width: 300px;
+  padding: 10px 0px 10px 0px;
+  letter-spacing: 4px;
+}
+section {
+  margin: 0 auto;
+  text-align: center;
+}
+.arrow-up {
+  margin: 0 auto;
+  text-align: center;
+  position: relative;
+  top: 1px;
+  width: 0;
+  height: 0;
+  margin-top: 10px;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 10px solid #f7f7f7;
+}
+form#contact {
+  margin: 0 auto;
+  text-align: center;
+  border-bottom: 2px solid #c3c3c3;
+  width: 300px;
+  padding: 20px;
+  background-color: #f7f7f7;
+  margin-bottom: 20px;
+}
+.form-control {
+  box-shadow: none;
+  border-radius: 0;
+  background-color: #f7f7f7;
+  outline: none;
+  border: none;
+  box-shadow: none !important;
+}
+textarea#message {
+  min-height: 100px;
+  resize: vertical;
+  overflow: hidden;
+  border-bottom: 0px;
+}
+button#send {
+  text-transform: uppercase;
+  border-bottom: 2px solid #c3c3c3;
+  margin-top: 20px;
+  letter-spacing: 4px;
+}
+
     </style>
   </head>
   <body>
-     <?php include 'header.php'; ?>
-      <div id="">
-        <h2 class="blocktext">Need to get in touch with us?</h2>
-
-
-        <br><br>
-
-        <form id='question' action="" method='post'>
-          <fieldset style="display:block; width:365px; margin-left: 50px;">
-            <legend style="text-align:left;"></legend>
-            <input type='hidden' name='action' value='question'/>
-            <br><br>
-
-            <label for='first_name' >First Name:</label>
-            <input type='text' name='email' id='email' maxlength="50" />
-            <br><br>
-
-            <label for='last_name' >Last Name:</label>
-            <input type='text' name='last_name' id='last_name' maxlength="50" />
-            <br><br>
-
-            <label for='email' >Email:</label>
-            <input type='email' name='email' id='email' maxlength="50" />
-            <br><br>
-
-            <label for='subject' >Subject:</label>
-            <input type='text' name='subject' id='subject' maxlength="50" />
-            <br><br>
-
-            <label for='message' >Message:</label>
-            <input type='text' name='message' id='message' maxlength="50" />
-            <br><br>
-
-            <input type='submit' value='Submit'/>
-          </fieldset>
-        </form>
-
+    <?php include 'header.php'; ?>
+    <div id="preloader"><div id="spinner"></div></div>
+     
+      <header>
+  <h1>SAY HELLO</h1>
+</header>
+<section>
+  <div class="arrow-up"></div>
+  <form id="contact" class="form-horizontal" role="form">
+    <div class="form-group">  
+      <div class="col-sm-12">
+        <input id="name" name="name" type="text" placeholder="NAME" class="form-control">
       </div>
+    </div>
+    <div class="form-group">  
+      <div class="col-sm-12">
+        <input id="email" name="email" type="email" placeholder="EMAIL" class="form-control">
+      </div>
+    </div>
+    <div class="form-group">  
+      <div class="col-sm-12">
+        <textarea class="form-control" id="message" name="message" placeholder="MESSAGE"></textarea>
+      </div>
+    </div>
+    <button id="send" name="send" class="btn btn-block">send</button>
+  </form>
+</section>
+  <!--Libraries and Plugins-->
+         <script src="../assets/index/js/libs/jquery-1.11.2.min.js"></script>
+        <script src="../assets/index/js/libs/jquery.easing.1.3.js"></script>
+        <script src="../assets/index/js/plugins/bootstrap.min.js"></script>
+        <script src="../assets/index/js/plugins/jquery.touchSwipe.min.js"></script>
+        <script src="../assets/index/js/plugins/jquery.placeholder.js"></script>
+    <script src="../assets/index/js/plugins/icheck.min.js"></script>
+    <script src="../assets/index/js/plugins/jquery.validate.min.js"></script>
+        <script src="../assets/index/js/plugins/gallery.js"></script>
+    <script src="../assets/index/js/plugins/jquery.fitvids.js"></script>
+        <script src="../assets/index/js/plugins/jquery.bxslider.min.js"></script>
+        <script src="../assets/index/js/plugins/waypoints.min.js"></script>
+    <script src="../assets/index/js/plugins/smoothscroll.js"></script>
+        <script src="../assets/index/js/landing2.js"></script>
       <?php include 'footer.php' ?>
     </body>
 </html>

@@ -1,83 +1,186 @@
+<?php function this_page()
+      {
+          $page='faq'; 
+          return $page;
+      }
+?> 
 <html>
   <head>
     <title>FAQ</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <!--Google Fonts-->
+    <link href='http://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700' rel='stylesheet' type='text/css'>
+    <!--Bootstrap 3.3.2-->
+    <link href="../assets/index/css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <!--Icon Fonts-->
+    <link href="../assets/index/css/font-awesome.min.css" rel="stylesheet" media="screen">
+    <link href="../assets/index/css/icon-moon.css" rel="stylesheet" media="screen">
+    <!--Animations-->
+    <link href="../assets/index/css/animate.css" rel="stylesheet" media="screen">
+    <!--Theme Styles-->
+    <link href="../assets/index/css/theme-styles.css" rel="stylesheet" media="screen">
+    <!--Color Schemes-->
+    <link class="color-scheme" href="../assets/index/css/colors/color-default.css" rel="stylesheet" media="screen">
+    <!--Modernizr-->
+        <script src="../assets/index/js/libs/modernizr.custom.js"></script>
+  
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <style>
-    #container {
-      margin: 25px;
-      padding: 30px;
-    }
-    label {
-      display: inline-block;
-      width: 100px;
-    }
-    .blocktext {
-    margin-left: auto;
-    margin-right: auto;
-    width: 700px;
-  }
+    @import url(http://fonts.googleapis.com/css?family=Open+Sans:300,800);
+
+body {
+  font-family: 'Open Sans';
+  font-size: 1.5em;
+  background: #eee;
+}
+
+.content {
+  width: 80%;
+  padding: 20px;
+  margin: 0 auto;
+  padding: 0 60px 0 0;
+}
+
+.centerplease {
+  margin: 0 auto;
+  max-width: auto;
+  font-size: 40px;
+}
+
+.question {
+  position: relative;
+  background: #232F3E;
+  margin: 0;
+  padding: 10px 10px 10px 50px;
+  display: block;
+  width:100%;
+  cursor: pointer;
+  color: white;
+}
+
+.answers {
+  background: white;
+  padding: 0px 15px;
+  margin: 5px 0;
+  height: 0;
+  overflow: hidden;
+  z-index: -1;
+  position: relative;
+  opacity: 0;
+  -webkit-transition: .7s ease;
+  -moz-transition: .7s ease;
+  -o-transition: .7s ease;
+  transition: .7s ease;
+}
+
+.questions:checked ~ .answers{
+  height: auto;
+  opacity: 1;
+  padding: 15px;
+}
+
+.plus {
+  position: absolute;
+  margin-left: 10px;
+  margin-top: 8px;
+  z-index: 5;
+  font-size: 2em;
+  line-height: 100%;
+  -webkit-user-select: none;    
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+  -webkit-transition: .3s ease;
+  -moz-transition: .3s ease;
+  -o-transition: .3s ease;
+  transition: .3s ease;
+  color: white;
+
+}
+
+.questions:checked ~ .plus {
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.questions {
+  display: none;
+}
     </style>
   </head>
   <body>
-      <?php include 'header.php'; ?>
-      <div id="container">
-        <h2 class="blocktext text-center">FAQ</h2>
+    <!--Page Preloading-->
+    <div id="preloader"><div id="spinner"></div></div>
+<?php include('header.php'); ?>
 
-        </h3>Who is the Baltimore box for?</h3>
-        Anyone who has had any kind of connection with Baltimore at some point in their life would be an ideal candidate for this box. It makes a really great gift idea for someone who used to live in the area and has since moved out of town.
+     <div class='centerplease'>
+  <center>Frequently Asked Questions</center>
+</div>
+<br>
 
-        <h3>How many items come in a box?</h3>
-        You get to select either 3, 5, or 10 items iconic to Baltimore that will be included in your box.
+<div class="content">
+<div>
+  <input type="checkbox" id="question1" name="q"  class="questions">
+  <div class="plus">+</div>
+  <label for="question1" class="question">
+    Who is the Baltimore box for?
+  </label>
+  <div class="answers">
+        <p>Anyone who has had any kind of connection with Baltimore at some point in their life would be an ideal candidate for this box. It makes a really great gift idea for someone who used to live in the area and has since moved out of town.
 
-        <h3>What are some things that can be included in the box?</h3>
-        To see examples that you will get to choose from go to our "What's in the box?" page.
+  </div>
+</div>
 
-        <h3>Can alcoholic beverages be shipped in the box?</h3>
-        No. We cannot ship any alcohol. We can however include gear such as: hats, koozies, key chains, t-shirts, etc. from companies such as Union Brewing, and others.
-
-        <h3>Can I ask for specific items to be put in the box?</h3>
-        Yes! At the time you order your box, you will be able to select from the Baltimore items that are mentioned on our "What's in the box?" page. If you want to make suggestions of items for future Baltimore boxes you can do so here.
-
-        <h3>How much does it cost? And do I pay extra for shipping?</h3>
-        You pay $25 for 3 items, $35 for 5 items, or $60 for 10 items for the original Baltimore Box. We also have special premium products that can be added on to your Baltimore Box. Click here to shop all our available products. Shipping is always FREE any time we ship within the USA! Ready to order?
-
-        <h3>Can I order now and schedule a later delivery date for a special occasion like for a birthday, anniversary, or holiday?</h3>
-        Yes! As you customize your Baltimore Box order there is an area to specify a date that you want your order delivered by. While we can make no guarantees that the box will arrive on the exact delivery date, we will do our best to make sure it arrives on or before the specified date.
-
-        <h3>Can you ship to a military APO / FPO address?</h3>
-        Yes! We offer FREE shipping to military APO / FPO addresses! Please make sure the address is accurately typed in during check out and that you leave the country as USA on the checkout page so you will be awarded free shipping.
-
-        <h3>Do you ship international and is there tracking for these orders?</h3>
-        Yes! There is an additional $20 charge for international orders. This is added to the total price of whichever box level you choose. Unfortunately there is no tracking number we can provide for you other than the Customs number. All international orders are shipped USPS First Class. If you would like proof that your International order was sent please Contact Us and we will send you a copy of the customs ticket and receipt from the post office.
-
-        <h3>How long will it take for my box to arrive?</h3>
-        You will be notified via email when your box ships (usually within 24-72 business hours from the time you place your order). After we ship your box, it should arrive within 3-5 business days from that point. Once the order ships, you will receive another email from Stamps.com with a tracking number. If you do not receive this email please contact us! For any International orders, arrival can take much longer ( ~ 2 weeks) and unfortunately will not come with tracking. We will however provide you with a customs number for International orders that provides tracking up until it leaves the country. We are NOT responsible for any international orders that do not reach their destination.
-        <br><br>
-
-        <form id='question' action="" method='post'>
-          <fieldset style="display:block; width:365px;">
-            <legend style="text-align:left;">Have another question for us?</legend>
-            <input type='hidden' name='action' value='question'/>
-            <br><br>
-
-            <label for='email' >Email:</label>
-            <input type='text' name='email' id='email' maxlength="50" />
-            <br><br>
-
-            <label for='subject' >Subject:</label>
-            <input type='text' name='subject' id='subject' maxlength="50" />
-            <br><br>
-
-            <label for='Message' >Address2:</label>
-            <input type='text' name='message' id='message' maxlength="50" />
-            <br><br>
-
-            <input type='submit' value='Send' class="blue"/>
-          </fieldset>
-        </form>
-    </div>
-    <?php include 'footer.php' ?>
+<div>
+  <input type="checkbox" id="question2" name="q" class="questions">
+  <div class="plus">+</div>
+  <label for="question2" class="question">
+    How many items come in a box?
+  </label>
+  <div class="answers">
+       You get to select either 3, 5, or 10 items iconic to Baltimore that will be included in your box.
+  </div>
+</div>
+  
+<div>
+  <input type="checkbox" id="question3" name="q" class="questions">
+  <div class="plus">+</div>
+  <label for="question3" class="question">
+        What are some things that can be included in the box?
+  </label>
+  <div class="answers">
+    To see examples that you will get to choose from go to our "What's in the box?" page.
+  </div>
+</div>
+<div>
+  <input type="checkbox" id="question4" name="q" class="questions">
+  <div class="plus">+</div>
+  <label for="question4" class="question">
+   Have another question for us?
+  </label>
+  <div class="answers">
+       <p>Send us a message on our <a href="/sacramento/contact">Contact Page</a>.</p>
+  </div>
+</div>
+</div>   
+    
+<!--Libraries and Plugins-->
+    <script src="../assets/index/js/libs/jquery-1.11.2.min.js"></script>
+        <script src="../assets/index/js/libs/jquery.easing.1.3.js"></script>
+        <script src="../assets/index/js/plugins/bootstrap.min.js"></script>
+        <script src="../assets/index/js/plugins/jquery.touchSwipe.min.js"></script>
+        <script src="../assets/index/js/plugins/jquery.placeholder.js"></script>
+    <script src="../assets/index/js/plugins/icheck.min.js"></script>
+    <script src="../assets/index/js/plugins/jquery.validate.min.js"></script>
+        <script src="../assets/index/js/plugins/gallery.js"></script>
+    <script src="../assets/index/js/plugins/jquery.fitvids.js"></script>
+        <script src="../assets/index/js/plugins/jquery.bxslider.min.js"></script>
+        <script src="../assets/index/js/plugins/waypoints.min.js"></script>
+    <script src="../assets/index/js/plugins/smoothscroll.js"></script>
+        <script src="../assets/index/js/landing2.js"></script>
+<?php include 'footer.php' ?>
 </body>
 </html>

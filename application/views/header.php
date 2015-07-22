@@ -1,6 +1,11 @@
+<?php 
+  
+    $location=this_page(); 
+ ?>
 <style type="text/css">
  body
  {
+    margin-top: 0px !important;
    background-color: #C8D2D9;
  }
  #nav
@@ -95,78 +100,39 @@ color: black !important;
  <img src="../assets/img/company_logo.png" width=100 height=100 class="img_header">
  <p class="p_header">Sacramento In A Box</p>
  <ul id="nav_options" class="nav nav-pills pull-right">
-   <li id="nav_list" class="active">
-     <a href="#" class="white_href_header">Home</a>
+<?php $index='';$faq='';$suggestions='';$shop='';$in_the_box='';$contact='';
+      switch ($location)
+      {
+        case 'index':
+        $index="id='nav_list' class='active'";
+        break;
+        case 'faq':
+        $faq="id='nav_list' class='active'";
+        break;
+        case 'shop':
+        $shop= "id='nav_list' class='active'";
+        break;
+        case 'suggestions':
+        $suggestions="id='nav_list' class='active'";
+        break;
+        case 'in_the_box':
+        $in_the_box="id='nav_list' class='active'";
+        break;
+        case 'contact':
+        $contact="id='nav_list' class='active'";
+        break;
+      }
+
+      
+ ?>
+   <li <?= $index;?>>
+     <a href="/" class="white_href_header">Home</a>
    </li>
-   <li><a href="faq" class="white_href_header">FAQ</a></li>
-   <li><a href="shop" class="white_href_header">Shop</a></li>
-   <li><a href="suggestions" class="white_href_header">Suggestions</a></li>
-   <li><a href="boxcontent" class="white_href_header">What's in the box?</a></li>
-   <li><a href="contact" class="white_href_header">Contact Us</a></li>
-   <ul class="nav navbar-nav navbar-right">
-     <li class="dropdown">
-       <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" class="white_href_header"> <span class="glyphicon glyphicon-shopping-cart"></span id="white"> 7 - Items<span class="caret"></span></a>
-       <ul class="dropdown-menu dropdown-cart" role="menu">
-           <li>
-               <span class="item">
-                 <span class="item-left">
-                     <img src="http://lorempixel.com/50/50/" alt="" class="img_header"/>
-                     <span class="item-info">
-                         <span>Item name</span>
-                         <span>23$</span>
-                     </span>
-                 </span>
-                 <span class="item-right">
-                     <button class="btn btn-xs btn-danger pull-right">x</button>
-                 </span>
-             </span>
-           </li>
-           <li>
-               <span class="item">
-                 <span class="item-left">
-                     <img src="http://lorempixel.com/50/50/" alt="" class="img_header"/>
-                     <span class="item-info">
-                         <span>Item name</span>
-                         <span>23$</span>
-                     </span>
-                 </span>
-                 <span class="item-right">
-                     <button class="btn btn-xs btn-danger pull-right">x</button>
-                 </span>
-             </span>
-           </li>
-           <li>
-               <span class="item">
-                 <span class="item-left">
-                     <img src="http://lorempixel.com/50/50/" alt="" class="img_header"/>
-                     <span class="item-info">
-                         <span>Item name</span>
-                         <span>23$</span>
-                     </span>
-                 </span>
-                 <span class="item-right">
-                     <button class="btn btn-xs btn-danger pull-right">x</button>
-                 </span>
-             </span>
-           </li>
-           <li>
-               <span class="item">
-                 <span class="item-left">
-                     <img src="http://lorempixel.com/50/50/" alt="" class="img_header"/>
-                     <span class="item-info">
-                         <span>Item name</span>
-                         <span>23$</span>
-                     </span>
-                 </span>
-                 <span class="item-right">
-                     <button class="btn btn-xs btn-danger pull-right">x</button>
-                 </span>
-             </span>
-           </li>
-           <li class="divider"></li>
-           <li><a class="text-center" id="view_cart" href="" class="white_href_header">View Cart</a></li>
-       </ul>
-     </li>
+   <li <?= $faq ?>><a href="faq" class="white_href_header">FAQ</a></li>
+   <li <?= $shop ?>><a href="shop" class="white_href_header">Shop</a></li>
+   <li <?= $suggestions ?>><a href="suggestions" class="white_href_header">Suggestions</a></li>
+   <li <?= $in_the_box ?>><a href="in_the_box" class="white_href_header">What's in the box?</a></li>
+   <li <?= $contact ?>><a href="contact" class="white_href_header">Contact Us</a></li> 
    </ul>
  </ul>
  </nav>

@@ -1,4 +1,9 @@
-
+<?php function this_page()
+      {
+          $page='index'; 
+          return $page;
+      }
+?> 
 <!--Conditionals for IE9 Support-->
 <!--[if IE 9]><html lang="en" class="ie ie9"><![endif]-->
 <html>

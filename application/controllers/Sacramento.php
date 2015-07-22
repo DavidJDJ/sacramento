@@ -5,7 +5,7 @@ class Sacramento extends CI_Controller {
 
 	public function index()
 	{
-		$this->load->view('landing_page');
+		$this->load->view('index');
 	}
 	public function cart() {
 		$this->load->view('cart');
@@ -19,8 +19,8 @@ class Sacramento extends CI_Controller {
 	public function suggestions() {
 		$this->load->view('suggestions');
 	}
-	public function box_content() {
-		$this->load->view('boxcontent');
+	public function in_the_box() {
+		$this->load->view('in_the_box');
 	}
 	public function main() {
 		$this->load->view('welcome_message');

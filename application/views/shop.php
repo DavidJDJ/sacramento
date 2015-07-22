@@ -21,7 +21,7 @@
              <div class="row">
                  <div class="col-md-4 text-center">
                      <img src="../assets/img/company_logo.png" class="product_images">
-                     <p>box with 5 Items</p>
+                     <p>Clothing box</p>
                  </div>
                  <div class="col-md-4 text-center">
                      <img src="../assets/img/company_logo.png" class="product_images">

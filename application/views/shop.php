@@ -4,20 +4,15 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-    <style>
-    #container {
-      margin: 25px;
-      padding: 30px;
-    }
-    label {
-      display: inline-block;
-      width: 100px;
-    }
-    .blocktext {
-    margin-left: auto;
-    margin-right: auto;
-    width: 600px;
-    }
+    <style type="text/css">
+     body
+     {
+       background-color: #C8D2D9;
+     }
+     .product_images {
+         width: 250px;
+         height: 250px;
+     }
     </style>
   </head>
   <body>

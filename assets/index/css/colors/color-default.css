@@ -1,0 +1,30 @@
+ .gallery li.gall-expanded > a::after {
+	border-bottom-color: #ff6f69;
+}
+.gall-expander {
+	background: #ff6f69;
+}
+.pricing-plan.highlited .body {
+	background-color: #ff6f69;
+}
+.hero {
+	background-color: #232F3E;
+}
+.page-block.color {
+	background-color: #232F3E;
+}
+.middle-block {
+	background-color: #232F3E;
+}
+@media screen and (max-width: 991px) {
+	.main-navi.open { 
+	border-bottom-color: #ff6f69;
+	}
+	.main-navi ul li a:hover {
+		color: #ff6f69;
+	}
+	.main-navi ul li.active a {
+		color: #ff6f69;
+		border-left-color: #ff6f69;
+	}
+}

@@ -21,12 +21,32 @@
     </style>
   </head>
   <body>
-       <?php include 'header.php'; ?>
-      <div id="container">
-          <h2 class="blocktext">Shop</h2>
-           <img id="top" src="" alt=""><img id="top" src="" alt=""><img id="top" src="" alt="">
-           <img id="bottom" src="" alt=""><img id="bottom" src="" alt="">
-      </div>
-        <?php include 'footer.php' ?>
-    </body>
+      <?php include('header.php') ?>
+      <div class="container">
+             <div class="row">
+                 <div class="col-md-4 text-center">
+                     <img src="../assets/img/company_logo.png" class="product_images">
+                     <p>box with 5 Items</p>
+                 </div>
+                 <div class="col-md-4 text-center">
+                     <img src="../assets/img/company_logo.png" class="product_images">
+                     <p>box with 10 Items</p>
+                 </div>
+                 <div class="col-md-4 text-center">
+                     <img src="../assets/img/company_logo.png" class="product_images">
+                     <p>box with 15 Items</p>
+                 </div>
+                 <div class="col-md-6 text-center">
+                     <img src="../assets/img/company_logo.png" class="product_images">
+                     <p>box with 15 Items</p>
+                 </div>
+                 <div class="col-md-6 text-center">
+                     <img src="../assets/img/company_logo.png" class="product_images">
+                     <p>box with 15 Items</p>
+                 </div>
+             </div>
+
+     </div>
+      <?php include('footer.php') ?>
+ </body>
 </html>

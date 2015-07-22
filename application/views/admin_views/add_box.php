@@ -13,7 +13,7 @@ var_dump($this->upload->data());
 		<link rel="stylesheet" href="../assets/styles/style_adminpage.css">
  	</head>
 	<body>
-		<!-- <div class="nav-side-menu">
+		<div class="nav-side-menu">
 		    <div class="brand">Sacramento Logo</div>
 		    <i class="fa fa-bars fa-2x toggle-btn" data-toggle="collapse" data-target="#menu-content"></i>
             <div class="menu-list">
@@ -43,7 +43,7 @@ var_dump($this->upload->data());
                     </ul>
 				</ul>
 		 </div>
-		</div> -->
+		</div>
 		<div class="container">
 			<h3>Add Box</h3>
 			<form method="post" action="add_box" enctype="multipart/form-data">

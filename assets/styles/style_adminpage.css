@@ -149,10 +149,10 @@ body {
 #dash_link {
   color: white;
 }
-#dash_link:hover {
+.dash_link:hover {
   color: white;
 }
-#dash_link:visited {
+.dash_link:visited {
   color: white;
 }
 #ordered {

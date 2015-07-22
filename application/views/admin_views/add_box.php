@@ -1,5 +1,6 @@
 <?php
-
+var_dump($this->session->all_userdata());
+var_dump($this->upload->data());
  ?>
  <!DOCTYPE html>
  <html>
@@ -12,51 +13,59 @@
 		<link rel="stylesheet" href="../assets/styles/style_adminpage.css">
  	</head>
 	<body>
-		<div class="nav-side-menu">
+		<!-- <div class="nav-side-menu">
 		    <div class="brand">Sacramento Logo</div>
 		    <i class="fa fa-bars fa-2x toggle-btn" data-toggle="collapse" data-target="#menu-content"></i>
-			<div class="menu-list">
+            <div class="menu-list">
 				<ul id="menu-content" class="menu-content collapse out">
-					<li>
-					  <a href="#">
-					  <i class="fa fa-dashboard fa-lg"></i> Dashboard
-					  </a>
-					</li>
+					  <a href="../admin/" class="dash_link">
+    					<li>
+    					  <i class="fa fa-dashboard fa-lg"></i> Dashboard
+    					</li>
+    				  </a>
 					<li  data-toggle="collapse" data-target="#products" class="collapsed">
 					  <a href="#"></i>Orders<span class="arrow"></span></a>
 					</li>
 					<ul class="sub-menu collapse" id="products">
-						<a href="#" id="dash_link"><li>Ordered</li></a>
-						<a href="#" id="dash_link"><li>Shipped</li></a>
+						<a href="../admin/ordered" class="dash_link"><li>Ordered</li></a>
+						<a href="../admin/shipped" class="dash_link"><li>Shipped</li></a>
 					</ul>
 					<li data-toggle="collapse" data-target="#service" class="collapsed">
 					  <a href="#">Products<span class="arrow"></span></a>
 					</li>
 					<ul class="sub-menu collapse" id="service">
-					  <a href="#" id="dash_link"><li>Products</li></a>
-					  <a href="#" id="dash_link"><li>Add Product</li></a>
-					  <a href="#" id="dash_link"><li>Add Box</li></a>
+					  <a href="../admin/products" class="dash_link"><li>Products</li></a>
+					  <a href="../admin/add_product" class="dash_link"><li>Add Product</li></a>
+					  <a href="../admin/add_box" class="dash_link"><li>Add Box</li></a>
 					</ul>
+                    <ul class="sub-menu">
+                         <a href="admin/log_out" class="dash_link"><li>Log Out</li></a>
+                    </ul>
 				</ul>
 		 </div>
-		</div>
+		</div> -->
 		<div class="container">
 			<h3>Add Box</h3>
-			<form>
+			<form method="post" action="add_box" enctype="multipart/form-data">
 			  <div class="form-group">
 				<label>Box Name</label>
-				<input type="text" class="form-control" placeholder="Name">
+				<input type="text" class="form-control" placeholder="Name" name="name">
 			  </div>
 			  <labe>Description</labe>
-			  <textarea class="form-control" rows="3" placeholder="Add a description"></textarea>
+			  <textarea class="form-control" rows="3" placeholder="Add a description" name="description"></textarea>
 			  <div class="form-group">
 				<label>Image</label>
-				<input type="file">
+				<input type="file" name="image">
 			  </div>
 			  <label>Price</label>
 			  <div class="input-group" id="price_div">
 				<div class="input-group-addon">$</div>
-				<input type="text" class="form-control" placeholder="Amount">
+				<input type="text" class="form-control" placeholder="Amount" name="amount">
+			  </div>
+              <label>Amount of items</label>
+			  <div class="input-group" id="price_div">
+				<div class="input-group-addon">I</div>
+				<input type="text" class="form-control" placeholder="Item Amount" name="item_amount">
 			  </div>
 			  <button type="submit" class="btn btn-default">Add</button>
 			</form>

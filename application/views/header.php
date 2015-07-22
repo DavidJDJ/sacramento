@@ -96,7 +96,7 @@ color: black !important;
  <p class="p_header">Sacramento In A Box</p>
  <ul id="nav_options" class="nav nav-pills pull-right">
    <li id="nav_list" class="active">
-     <a href="#" class="white_href_header">Home</a>
+     <a href="/" class="white_href_header">Home</a>
    </li>
    <li><a href="faq" class="white_href_header">FAQ</a></li>
    <li><a href="shop" class="white_href_header">Shop</a></li>

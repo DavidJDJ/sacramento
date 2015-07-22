@@ -22,18 +22,18 @@ defined('BASEPATH') OR exit('No direct script access allowed');
       margin-left: 20px;
     }
     .footer
-    {   
+    {
       padding: 8px;
        border-top: 1px solid silver;
        padding-bottom: 14px;
        height: 75px; /* .push must be the same height as .footer */
-      background-color: #F9C402;
+      /*background-color: #F9C402;*/
     }
     .social_media_footer{
       text-align: center;
       padding-right: 55px;
       padding-bottom: 15px;
-     
+
     }
    </style>
     <title>Example Title</title>

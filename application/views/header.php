@@ -1,6 +1,6 @@
-<?php 
-  
-    $location=this_page(); 
+<?php
+
+    $location=this_page();
  ?>
 <style type="text/css">
  body
@@ -123,7 +123,7 @@ color: black !important;
         break;
       }
 
-      
+
  ?>
    <li <?= $index;?>>
      <a href="/" class="white_href_header">Home</a>
@@ -132,7 +132,7 @@ color: black !important;
    <li <?= $shop ?>><a href="shop" class="white_href_header">Shop</a></li>
    <li <?= $suggestions ?>><a href="suggestions" class="white_href_header">Suggestions</a></li>
    <li <?= $in_the_box ?>><a href="in_the_box" class="white_href_header">What's in the box?</a></li>
-   <li <?= $contact ?>><a href="contact" class="white_href_header">Contact Us</a></li> 
+   <li <?= $contact ?>><a href="contact" class="white_href_header">Contact Us</a></li>
    </ul>
  </ul>
  </nav>

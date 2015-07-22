@@ -22,15 +22,6 @@
         <body>
           <?php include 'header.php'; ?>
           <div id="container">
-            <ul class="nav nav-tabs">
-              <li role="presentation" class="active"><a href="#">Home</a></li>
-              <li role="presentation"><a href="#">FAQ</a></li>
-              <li role="presentation"><a href="#">Shop</a></li>
-              <li role="presentation"><a href="#">Suggestions</a></li>
-              <li role="presentation"><a href="#">What's in the box?</a></li>
-              <li role="presentation"><a href="#">Wedding Boxes</a></li>
-              <li role="presentation"><a href="#">Contact Us</a></li>
-            </ul>
             <h2 class="blocktext">Some of the things we put in the box</h2>
             <h3 class="blocktext">You get to choose 3,5, or 10 items from below when you order</h3>
             <h4 class="blocktext">No alcoholic beverages are included in the box</h4>
@@ -39,5 +30,6 @@
             <img src="" alt="">
 
           </div>
+          <?php include 'footer.php' ?>
     </body>
 </html>

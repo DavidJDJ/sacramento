@@ -93,6 +93,10 @@ color: black !important;
 .navbar-default .navbar-nav>li>a {
  color: white !important;
 }
+.product_images {
+    width: 250px;
+    height: 250px;
+}
    </style>
  <nav id="nav" class="navbar navbar-default">
  <img src="../assets/img/company_logo.png" width=100 height=100 class="img_header">

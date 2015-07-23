@@ -104,7 +104,8 @@ function this_page()
 			            </tr>
 			          </thead>
 			          <tbody>
-						  <?php foreach ($carts as $cart => $value) { ?>
+						  <?php if (!empty($carts)) {
+                          foreach ($carts as $cart => $value) { ?>
 							  <tr>
 								  <td><?= $value['box'] ?></td>
 								  <td><?php $keys = array_keys($value);
@@ -115,7 +116,10 @@ function this_page()
 								  <td>$<?= $value['box_price'] ?></td>
 								  <?php $price += $value['box_price'] ?>
 							  </tr>
-						  <?php } ?>
+						  <?php }
+                      } else {?>
+                          <center><h1>Your cart is empty</h1></center>
+                          <?php } ?>
 			          </tbody>
 			        </table> <!--end of table -->
 			      </div> <!--end of div col -->
@@ -147,6 +151,7 @@ function this_page()
       </div>
       <div class="modal-body">
 		  <form action="confirmation" method="POST" id="payment-form">
+              <input type="hidden" name="amount" value="<?= $price ?>">
 		    <span class="payment-errors"></span>
 			<div class="form-row">
 			  <label>

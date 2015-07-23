@@ -1,9 +1,10 @@
 <?php
 function this_page()
       {
-          $page='in_the_box'; 
+          $page='in_the_box';
           return $page;
       }
+    //   var_dump($products)
 ?>
 
 
@@ -17,28 +18,28 @@ function this_page()
     {
       background-color: #C8D2D9;
     }
+    .product_image {
+        width: 200px;
+        height: 200px;
+    }
    </style>
-    <title>Example Title</title>
-
-    <!-- Bootstrap -->
-    <!-- Latest compiled and minified CSS -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-
-<!-- Latest compiled and minified JavaScript -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
+    <title>In The Box</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
  </head>
  <body>
+     <?php include('header.php'); ?>
     <div class="container">
-
+        <div class="row">
+            <?php foreach ($products as $product) { ?>
+                <div class="col-md-3 text-center">
+                    <img class="product_image" src="../<?= $product['image'] ?>">
+                    <p><?= $product['name'] ?></p>
+                </div>
+            <?php } ?>
+        </div>
     </div>
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <?php include 'footer.php' ?>
 </body>
 </html

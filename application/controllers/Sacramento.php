@@ -17,7 +17,9 @@ class Sacramento extends CI_Controller {
 		$this->load->view('suggestions');
 	}
 	public function in_the_box() {
-		$this->load->view('in_the_box');
+		$this->load->model('sacramento_model');
+		$result = $this->sacramento_model->products();
+		$this->load->view('in_the_box', array('products' => $result));
 	}
 	public function main() {
 		$this->load->view('welcome_message');

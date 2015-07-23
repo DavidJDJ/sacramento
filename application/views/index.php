@@ -29,7 +29,7 @@
 
 <style>
 body {
-    background-color: #232F3E;
+    background-color: white !important;
 }
 </style>
   </head>

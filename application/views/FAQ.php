@@ -31,7 +31,7 @@
 body {
   font-family: 'Open Sans';
   font-size: 1.5em;
-  background: #eee;
+  background-color: white !important;
 }
 
 .content {

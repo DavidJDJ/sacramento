@@ -26,7 +26,7 @@
     <style type="text/css">
      body
      {
-       background-color: #C8D2D9;
+       background-color: white !important;
      }
      .product_images {
          width: 250px;

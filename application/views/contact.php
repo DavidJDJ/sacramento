@@ -47,7 +47,7 @@
   display: none;
 }
 body {
-  background-color: #e3e3e3;
+  background-color: white !important;
   color: #555555;
   font-family: 'Oswald', sans-serif;
   font-weight: 300;
@@ -55,6 +55,11 @@ body {
 }
 body * {
   outline: none !important;
+}
+#contact_form_bg{
+  padding: 40px;
+  background-color: #C8D2D9;
+  
 }
 header h1 {
   text-transform: uppercase;
@@ -121,6 +126,7 @@ button#send {
     <?php include 'header.php'; ?>
     <div id="preloader"><div id="spinner"></div></div>
      
+     <div id="contact_form_bg">
       <header>
   <h1>SAY HELLO</h1>
 </header>
@@ -145,6 +151,7 @@ button#send {
     <button id="send" name="send" class="btn btn-block">send</button>
   </form>
 </section>
+  </div>
   <!--Libraries and Plugins-->
          <script src="../assets/index/js/libs/jquery-1.11.2.min.js"></script>
         <script src="../assets/index/js/libs/jquery.easing.1.3.js"></script>

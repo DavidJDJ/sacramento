@@ -1,5 +1,5 @@
 <?php
-
+ 
     $location=this_page();
  ?>
 <style type="text/css">

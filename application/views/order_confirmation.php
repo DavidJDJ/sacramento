@@ -1,7 +1,11 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
+function this_page()
+      {
+          $page='shop'; 
+          return $page;
+      }
 ?>
-
 <html lang="en">
   <head>
     <meta charset="utf-8">
@@ -10,24 +14,17 @@ defined('BASEPATH') OR exit('No direct script access allowed');
    <style type="text/css">
     body
     {
-      background-color: #C8D2D9;
+      background-color: white !important;
     }
-    iframe{
-      width: 550px;
-      height: 435px;
-      display: inline-block;
+    a{
+      text-decoration: none !important;
+      color: white !important;
     }
-    #content{
-      width: 550px;
-      height: 435px;
-      display: inline-block;
-      text-align: justify;
-      vertical-align: top;
-      margin-top: 50px;
-      margin-left: 30px;
+    .container{
+      margin-bottom: 20px;
     }
    </style>
-    <title>Example Title</title>
+    <title>Thank You</title>
 
     <!-- Bootstrap -->
     <!-- Latest compiled and minified CSS -->
@@ -44,21 +41,19 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <![endif]-->
  </head>
  <body>
+  <?php include('header.php'); ?>
     <div class="container">
-
-    <center><iframe src="assets/slider.html" frameBorder="0"></iframe>
-    <div id="content">
-      <h3>Create a Baltimore Box with an added item from Route One!</h3>
-      <p class="lean">from $40.00</p>
-      <p>The same GREAT Baltimore Box, now with an added item from Route One Apparel! (FREE SHIPPING to USA and Military APO / FPO addresses)</p>
-      <p>Upon clicking "Purchase" below you will be able to select which items you want put inside your Baltimore Box.</p>
-      <p>You get to choose 3, 5 or 10 items for your box from our regular list of Baltimore items. Then you get to select 1 additional item from Route One Apparel!</p>
-       <button type="button" class="btn btn-primary">Add to Cart</button>
-    </div></center>
+      <h1>Thank you for your order</h1>
+      <h3>Order number is: 30864321</h3>
+      <p>You will receive an email confirmation shortly at youremail@email.com</p>
+    <div class="col-md-2">
+      <div class='btn-primary'>
+        <center><a href="/">Go to Homepage</a></center>
+      </div>
     </div>
-<?php include('footer.php');
-?>
+  </div>
+<?php include('footer.php'); ?>
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 </body>
-</html
+</html>

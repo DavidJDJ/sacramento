@@ -8,7 +8,7 @@
       padding: 8px;
        border-top: 1px solid silver;
        padding-bottom: 14px;
-       height: 75px; /* .push must be the same height as .footer */
+       height: 75px;
     }
     #footer_text{
       font-size: 16px;

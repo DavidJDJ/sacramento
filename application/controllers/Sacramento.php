@@ -26,7 +26,11 @@ class Sacramento extends CI_Controller {
 		$this->load->view('welcome_message');
 	}
 	public function shop() {
-		$this->load->view('shop');
+		//added by reza
+    	$this->load->database();
+		$this->load->model('PlaceOrder');
+		$boxes = $this->PlaceOrder->fetch_boxes();
+		$this->load->view('shop', array('boxes' => $boxes));
 	}
 	public function shop_box() {
 		$this->load->model('sacramento_model');

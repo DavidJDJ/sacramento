@@ -49,6 +49,12 @@
     
 });
     </script>
+  <!-- Background color correction -->
+    <style>
+    body{
+      background-color: white !important;
+    }
+    </style>
     <!--[if IE]>
       <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->

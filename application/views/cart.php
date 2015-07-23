@@ -2,6 +2,7 @@
 // var_dump($this->session->all_userdata());
 // var_dump($products);
 // var_dump($carts);
+// var_dump($this->session->flashdata('errors'));
 $price = 0;
 $carts = $this->session->userdata('cart');
 function this_page()
@@ -88,6 +89,9 @@ function this_page()
 	table {
 		background-color: white;
 	}
+    .errors {
+        color: red;
+    }
 	</style>
 </head>
 <body>
@@ -95,6 +99,11 @@ function this_page()
 			<div id="container">
 			    <div class="row">
 			      <div class="col-md-12">
+                  <div class="errors">
+                      <?php if ($this->session->flashdata('errors')) {
+                          echo $this->session->flashdata('errors');
+                      } ?>
+                  </div>
 			        <table id="table" class='table table-bordered'>
 			          <thead>
 			            <tr>
@@ -124,7 +133,6 @@ function this_page()
 			        </table> <!--end of table -->
 			      </div> <!--end of div col -->
 			    </div> <!--end of div class row -->
-
 			    <div class="row">
 			      <div class="col-md-3 col-md-offset-7">
 			        <h4 class="text-right">Total: $<?= $price ?></h4>
@@ -138,157 +146,151 @@ function this_page()
 						  Pay
 						</button>
 					</div>
-
-
 					<!-- Button trigger modal -->
-<!-- Modal -->
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel">Payment</h4>
-      </div>
-      <div class="modal-body">
-		  <form action="confirmation" method="POST" id="payment-form">
-              <input type="hidden" name="amount" value="<?= $price ?>">
-		    <span class="payment-errors"></span>
-			<div class="form-row">
-			  <label>
-				<span>First Name</span>
-				<input type="text" size="20" name="first_name"/>
-			  </label>
-			</div>
-			<div class="form-row">
-			  <label>
-				<span>Last Name</span>
-				<input type="text" size="20" name="last_name"/>
-			  </label>
-			</div>
-			<div class="form-row">
-			  <label>
-				<span>Address 1</span>
-				<input type="text" size="20" name="address_1"/>
-			  </label>
-			</div>
-			<div class="form-row">
-			  <label>
-				<span>Address 2</span>
-				<input type="text" size="20" name="address_2"/>
-			  </label>
-			</div>
-			<div class="form-row">
-			  <label>
-				<span>City</span>
-				<input type="text" size="20" name="city"/>
-			  </label>
-			</div>
-			<div class="form-row">
-			  <label>
-				<span>State</span>
-				<select>
-					<option value="AL">Alabama</option>
-					<option value="AK">Alaska</option>
-					<option value="AZ">Arizona</option>
-					<option value="AR">Arkansas</option>
-					<option value="CA">California</option>
-					<option value="CO">Colorado</option>
-					<option value="CT">Connecticut</option>
-					<option value="DE">Delaware</option>
-					<option value="DC">District Of Columbia</option>
-					<option value="FL">Florida</option>
-					<option value="GA">Georgia</option>
-					<option value="HI">Hawaii</option>
-					<option value="ID">Idaho</option>
-					<option value="IL">Illinois</option>
-					<option value="IN">Indiana</option>
-					<option value="IA">Iowa</option>
-					<option value="KS">Kansas</option>
-					<option value="KY">Kentucky</option>
-					<option value="LA">Louisiana</option>
-					<option value="ME">Maine</option>
-					<option value="MD">Maryland</option>
-					<option value="MA">Massachusetts</option>
-					<option value="MI">Michigan</option>
-					<option value="MN">Minnesota</option>
-					<option value="MS">Mississippi</option>
-					<option value="MO">Missouri</option>
-					<option value="MT">Montana</option>
-					<option value="NE">Nebraska</option>
-					<option value="NV">Nevada</option>
-					<option value="NH">New Hampshire</option>
-					<option value="NJ">New Jersey</option>
-					<option value="NM">New Mexico</option>
-					<option value="NY">New York</option>
-					<option value="NC">North Carolina</option>
-					<option value="ND">North Dakota</option>
-					<option value="OH">Ohio</option>
-					<option value="OK">Oklahoma</option>
-					<option value="OR">Oregon</option>
-					<option value="PA">Pennsylvania</option>
-					<option value="RI">Rhode Island</option>
-					<option value="SC">South Carolina</option>
-					<option value="SD">South Dakota</option>
-					<option value="TN">Tennessee</option>
-					<option value="TX">Texas</option>
-					<option value="UT">Utah</option>
-					<option value="VT">Vermont</option>
-					<option value="VA">Virginia</option>
-					<option value="WA">Washington</option>
-					<option value="WV">West Virginia</option>
-					<option value="WI">Wisconsin</option>
-					<option value="WY">Wyoming</option>
-				</select>
-			  </label>
-			</div>
-			<div class="form-row">
-			  <label>
-				<span>Zip code</span>
-				<input type="text" size="20" name="zip"/>
-			  </label>
-			</div>
-			<div class="form-row">
-			  <label>
-				<span>Email Address</span>
-				<input type="text" size="20" name="email"/>
-			  </label>
-			</div>
-		    <div class="form-row">
-		      <label>
-		        <span>Card Number</span>
-		        <input type="text" size="20" data-stripe="number"/>
-		      </label>
-		    </div>
+                    <!-- Modal -->
+                    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                      <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                            <h4 class="modal-title" id="myModalLabel">Payment</h4>
+                          </div>
+                          <div class="modal-body">
+                    		  <form action="confirmation" method="POST" id="payment-form">
+                                  <input type="hidden" name="amount" value="<?= $price ?>">
+                    		    <span class="payment-errors"></span>
+                    			<div class="form-row">
+                    			  <label>
+                    				<span>First Name</span>
+                    				<input type="text" size="20" name="first_name"/>
+                    			  </label>
+                    			</div>
+                    			<div class="form-row">
+                    			  <label>
+                    				<span>Last Name</span>
+                    				<input type="text" size="20" name="last_name"/>
+                    			  </label>
+                    			</div>
+                    			<div class="form-row">
+                    			  <label>
+                    				<span>Address 1</span>
+                    				<input type="text" size="20" name="address_1"/>
+                    			  </label>
+                    			</div>
+                    			<div class="form-row">
+                    			  <label>
+                    				<span>Address 2</span>
+                    				<input type="text" size="20" name="address_2"/>
+                    			  </label>
+                    			</div>
+                    			<div class="form-row">
+                    			  <label>
+                    				<span>City</span>
+                    				<input type="text" size="20" name="city"/>
+                    			  </label>
+                    			</div>
+                    			<div class="form-row">
+                    			  <label>
+                    				<span>State</span>
+                    				<select>
+                    					<option value="AL">Alabama</option>
+                    					<option value="AK">Alaska</option>
+                    					<option value="AZ">Arizona</option>
+                    					<option value="AR">Arkansas</option>
+                    					<option value="CA">California</option>
+                    					<option value="CO">Colorado</option>
+                    					<option value="CT">Connecticut</option>
+                    					<option value="DE">Delaware</option>
+                    					<option value="DC">District Of Columbia</option>
+                    					<option value="FL">Florida</option>
+                    					<option value="GA">Georgia</option>
+                    					<option value="HI">Hawaii</option>
+                    					<option value="ID">Idaho</option>
+                    					<option value="IL">Illinois</option>
+                    					<option value="IN">Indiana</option>
+                    					<option value="IA">Iowa</option>
+                    					<option value="KS">Kansas</option>
+                    					<option value="KY">Kentucky</option>
+                    					<option value="LA">Louisiana</option>
+                    					<option value="ME">Maine</option>
+                    					<option value="MD">Maryland</option>
+                    					<option value="MA">Massachusetts</option>
+                    					<option value="MI">Michigan</option>
+                    					<option value="MN">Minnesota</option>
+                    					<option value="MS">Mississippi</option>
+                    					<option value="MO">Missouri</option>
+                    					<option value="MT">Montana</option>
+                    					<option value="NE">Nebraska</option>
+                    					<option value="NV">Nevada</option>
+                    					<option value="NH">New Hampshire</option>
+                    					<option value="NJ">New Jersey</option>
+                    					<option value="NM">New Mexico</option>
+                    					<option value="NY">New York</option>
+                    					<option value="NC">North Carolina</option>
+                    					<option value="ND">North Dakota</option>
+                    					<option value="OH">Ohio</option>
+                    					<option value="OK">Oklahoma</option>
+                    					<option value="OR">Oregon</option>
+                    					<option value="PA">Pennsylvania</option>
+                    					<option value="RI">Rhode Island</option>
+                    					<option value="SC">South Carolina</option>
+                    					<option value="SD">South Dakota</option>
+                    					<option value="TN">Tennessee</option>
+                    					<option value="TX">Texas</option>
+                    					<option value="UT">Utah</option>
+                    					<option value="VT">Vermont</option>
+                    					<option value="VA">Virginia</option>
+                    					<option value="WA">Washington</option>
+                    					<option value="WV">West Virginia</option>
+                    					<option value="WI">Wisconsin</option>
+                    					<option value="WY">Wyoming</option>
+                    				</select>
+                    			  </label>
+                    			</div>
+                    			<div class="form-row">
+                    			  <label>
+                    				<span>Zip code</span>
+                    				<input type="text" size="20" name="zip"/>
+                    			  </label>
+                    			</div>
+                    			<div class="form-row">
+                    			  <label>
+                    				<span>Email Address</span>
+                    				<input type="text" size="20" name="email"/>
+                    			  </label>
+                    			</div>
+                    		    <div class="form-row">
+                    		      <label>
+                    		        <span>Card Number</span>
+                    		        <input type="text" size="20" data-stripe="number"/>
+                    		      </label>
+                    		    </div>
 
-		    <div class="form-row">
-		      <label>
-		        <span>CVC</span>
-		        <input type="text" size="4" data-stripe="cvc"/>
-		      </label>
-		    </div>
+                    		    <div class="form-row">
+                    		      <label>
+                    		        <span>CVC</span>
+                    		        <input type="text" size="4" data-stripe="cvc"/>
+                    		      </label>
+                    		    </div>
 
-		    <div class="form-row">
-		      <label>
-		        <span>Expiration (MM/YYYY)</span>
-		        <input type="text" size="2" data-stripe="exp-month"/>
-		      </label>
-		      <span> / </span>
-		      <input type="text" size="4" data-stripe="exp-year"/>
-		    </div>
-	      </div>
-	      <div class="modal-footer">
-	        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-	        <button type="submit" class="btn btn-primary">Pay</button>
-	      </div>
-	  </form>
-    </div>
-  </div>
-</div>
-
-
+                    		    <div class="form-row">
+                    		      <label>
+                    		        <span>Expiration (MM/YYYY)</span>
+                    		        <input type="text" size="2" data-stripe="exp-month"/>
+                    		      </label>
+                    		      <span> / </span>
+                    		      <input type="text" size="4" data-stripe="exp-year"/>
+                    		    </div>
+                    	      </div>
+                    	      <div class="modal-footer">
+                    	        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    	        <button type="submit" class="btn btn-primary">Pay</button>
+                    	      </div>
+                    	  </form>
+                        </div>
+                      </div>
+                    </div>
 		    </div><!--end of div class row -->
-
-
 	<?php include 'footer.php' ?>
 </body>
 </html>

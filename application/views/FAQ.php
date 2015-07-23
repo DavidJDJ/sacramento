@@ -1,9 +1,9 @@
 <?php function this_page()
       {
-          $page='faq'; 
+          $page='faq';
           return $page;
       }
-?> 
+?>
 <html>
   <head>
     <title>FAQ</title>
@@ -23,7 +23,7 @@
     <link class="color-scheme" href="../assets/index/css/colors/color-default.css" rel="stylesheet" media="screen">
     <!--Modernizr-->
         <script src="../assets/index/js/libs/modernizr.custom.js"></script>
-  
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <style>
     @import url(http://fonts.googleapis.com/css?family=Open+Sans:300,800);
@@ -86,7 +86,7 @@ body {
   z-index: 5;
   font-size: 2em;
   line-height: 100%;
-  -webkit-user-select: none;    
+  -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   -o-user-select: none;
@@ -144,7 +144,7 @@ body {
        You get to select either 3, 5, or 10 items iconic to Baltimore that will be included in your box.
   </div>
 </div>
-  
+
 <div>
   <input type="checkbox" id="question3" name="q" class="questions">
   <div class="plus">+</div>
@@ -165,8 +165,8 @@ body {
        <p>Send us a message on our <a href="/sacramento/contact">Contact Page</a>.</p>
   </div>
 </div>
-</div>   
-    
+</div>
+
 <!--Libraries and Plugins-->
     <script src="../assets/index/js/libs/jquery-1.11.2.min.js"></script>
         <script src="../assets/index/js/libs/jquery.easing.1.3.js"></script>

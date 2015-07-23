@@ -65,6 +65,25 @@ class Sacramento extends CI_Controller {
 		}
 	}
 	public function confirmation() {
-		var_dump($this->input->post());
+		$this->load->library('form_validation');
+		$this->form_validation->set_rules('amount', 'amount', "trim|required|is_natural_no_zero");
+		$this->form_validation->set_rules('first_name', 'First Name', 'trim|required');
+		$this->form_validation->set_rules('last_name', 'Last Name', 'trim|required');
+		$this->form_validation->set_rules('address_1', "Address", 'trim|required');
+		$this->form_validation->set_rules('address_2', "Address 2", "trim");
+		$this->form_validation->set_rules('city', 'City', 'trim|required');
+		$this->form_validation->set_rules('zip', 'Zip', 'trim|required');
+		$this->form_validation->set_rules('email', "Email", 'trim|required|valid_email');
+		$this->form_validation->set_rules('stripeToken', 'transaction', 'trim|required');
+		if ($this->form_validation->run() == FALSE) {
+			$this->session->set_flashdata('errors', validation_errors());
+			redirect('../sacramento/cart');
+		} else {
+			var_dump($this->session->all_userdata());
+			var_dump($this->input->post());
+			$this->load->model('sacramento_model');
+			$this->sacramento_model->add_user();
+			redirect('/success');
+		}
 	}
 }

@@ -3,7 +3,7 @@
           $page='shop';
           return $page;
       }
-      var_dump($boxes);
+    //   var_dump($boxes);
 ?>
 <html>
   <head>

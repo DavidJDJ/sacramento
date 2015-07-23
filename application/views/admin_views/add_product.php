@@ -41,7 +41,7 @@
     			  <select class="form-control" name="preselected_box">
     				  <option value="0">No box</option>
     				  <?php foreach ($boxes as $box) {
-    				      ?><option value="<?= $box['name'] ?>"><?= $box['name'] ?></option>
+    				      ?><option value="<?= $box['id'] ?>"><?= $box['name'] ?></option>
     				 <?php } ?>
     			  </select>
             </div>

@@ -50,11 +50,9 @@
   </div>
   </div></div></div>
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <!-- // <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script> -->
   <script src="../assets/plug_in/classysocial/js/jquery.classysocial.min.js"></script>
   <link rel="stylesheet" type="text/css" href="../assets/plug_in/classysocial/css/jquery.classysocial.min.css" />
   <script>
     $('.classysocial').ClassySocial();
   </script>
-</body>
-</html

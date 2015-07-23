@@ -1,9 +1,9 @@
 <?php function this_page()
       {
-          $page='index'; 
+          $page='index';
           return $page;
       }
-?> 
+?>
 <!--Conditionals for IE9 Support-->
 <!--[if IE 9]><html lang="en" class="ie ie9"><![endif]-->
 <html>
@@ -27,195 +27,150 @@
     <!--Modernizr-->
 		<script src="assets/index/js/libs/modernizr.custom.js"></script>
 
-<style>
-body {
-    background-color: white !important;
-}
-</style>
-  </head>
+        <?php
+        $location=this_page();
+         ?>
+        <style type="text/css">
+         body
+         {
+            margin-top: 0px !important;
+           background-color: #C8D2D9;
+         }
+         #nav
+         {
+          background-color: #232F3E;
+          z-index: 0;
+         }
+         .img_header{
+           margin-left: 40px;
+         }
+         .p_header{
+           z-index: 1;
+           color: white;
+           padding: 15px;
+           display: inline-block;
+           font-size: 28px;
+           margin-right: 20px;
+         }
+         #cart{
+           text-decoration: none;
+           color: white;
+           margin-right: 80px;
+         }
+         .nav{
+           display: inline-block;
+         }
+         .white_href_header{
+           color: white !important;
+           font-size: 18px !important;
+         }
+         #nav_options{
+           padding-right: 112px;
+           padding-top: 26px;
+         }
+        /*..................menu_drop_down...............*/
 
-  <!--Body-->
-  <body>
-  <style type="text/css">
-   #nav
-   {
-    background-color: #232F3E;
-    z-index: 0;
-   }
-   .img_header{
-     margin-left: 40px;
-   }
-   .p_header{
-     z-index: 1;
-     color: white;
-     padding: 15px;
-     display: inline-block;
-     font-size: 28px;
-     margin-right: 20px;
-   }
-   #cart{
-     text-decoration: none;
-     color: white;
-     margin-right: 80px;
-   }
-   .nav{
-     display: inline-block;
-   }
-   .white_href_header{
-     color: white !important;
-     font-size: 18px !important;
-   }
-   #nav_options{
-     padding-right: 112px;
-     padding-top: 26px;
-   }
-  /*..................menu_drop_down...............*/
+         ul.dropdown-cart{
+         min-width:250px;
+        }
+        ul.dropdown-cart li .item{
+         display:block;
+         padding:3px 10px;
+         margin: 3px 0;
+        }
+        ul.dropdown-cart li .item:hover{
+         background-color:#f3f3f3;
+        }
+        ul.dropdown-cart li .item:after{
+         visibility: hidden;
+         display: block;
+         font-size: 0;
+         content: " ";
+         clear: both;
+         height: 0;
+        }
+        .dropdown-menu
+        {
+        min-width: 221px !important;
+        }
 
-   ul.dropdown-cart{
-   min-width:250px;
-  }
-  ul.dropdown-cart li .item{
-   display:block;
-   padding:3px 10px;
-   margin: 3px 0;
-  }
-  ul.dropdown-cart li .item:hover{
-   background-color:#f3f3f3;
-  }
-  ul.dropdown-cart li .item:after{
-   visibility: hidden;
-   display: block;
-   font-size: 0;
-   content: " ";
-   clear: both;
-   height: 0;
-  }
-  .dropdown-menu
-  {
-  min-width: 221px !important;
-  }
+        ul.dropdown-cart li .item-left{
+         float:left;
+        }
+        ul.dropdown-cart li .item-left .img_header,
+        ul.dropdown-cart li .item-left span.item-info{
+         float:left;
+        }
+        ul.dropdown-cart li .item-left span.item-info{
+         margin-left:10px;
+        }
+        ul.dropdown-cart li .item-left span.item-info span{
+         display:block;
+        }
+        ul.dropdown-cart li .item-right{
+         float:right;
+        }
+        ul.dropdown-cart li .item-right button{
+         margin-top:14px;
+        }
+        #view_cart{
+        color: black !important;
+        }
+        #id {
+         color: white;
+        }
+        .navbar-default .navbar-nav>li>a {
+         color: white !important;
+        }
+        .navbar {
+            margin-bottom: 0px;
+            border-radius: 0px;
+            border: none;
+        }
+           </style>
+         <nav id="nav" class="navbar navbar-default">
+         <img src="../assets/img/company_logo.png" width=100 height=100 class="img_header">
+         <p class="p_header">Sacramento In A Box</p>
+         <ul id="nav_options" class="nav nav-pills pull-right">
+        <?php $index='';$faq='';$suggestions='';$shop='';$in_the_box='';$contact='';$cart='';
+              switch ($location)
+              {
+                case 'index':
+                $index="id='nav_list' class='active'";
+                break;
+                case 'faq':
+                $faq="id='nav_list' class='active'";
+                break;
+                case 'shop':
+                $shop= "id='nav_list' class='active'";
+                break;
+                case 'suggestions':
+                $suggestions="id='nav_list' class='active'";
+                break;
+                case 'in_the_box':
+                $in_the_box="id='nav_list' class='active'";
+                break;
+                case 'contact':
+                $contact="id='nav_list' class='active'";
+                break;
+                $cart="id='nav_list' class='active'";
+                break;
+              }
 
-  ul.dropdown-cart li .item-left{
-   float:left;
-  }
-  ul.dropdown-cart li .item-left .img_header,
-  ul.dropdown-cart li .item-left span.item-info{
-   float:left;
-  }
-  ul.dropdown-cart li .item-left span.item-info{
-   margin-left:10px;
-  }
-  ul.dropdown-cart li .item-left span.item-info span{
-   display:block;
-  }
-  ul.dropdown-cart li .item-right{
-   float:right;
-  }
-  ul.dropdown-cart li .item-right button{
-   margin-top:14px;
-  }
-  #view_cart{
-  color: black !important;
-  }
-  #id {
-   color: white;
-  }
-  .navbar-default .navbar-nav>li>a {
-   color: white !important;
-   border-color: none !important;
-  }
-  body {
-      background-color: #232F3E;
-  }
-  .footer {
-      background-color: white;
-  }
-  .navbar-default {
-      border: none !important;
-  }
 
-     </style>
-   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-   <nav id="nav" class="navbar navbar-default">
-   <img src="../assets/img/company_logo.png" width=100 height=100 class="img_header">
-   <p class="p_header">Sacramento In A Box</p>
-   <ul id="nav_options" class="nav nav-pills pull-right">
-     <li id="nav_list" class="active">
-       <a href="#" class="white_href_header">Home</a>
-     </li>
-     <li><a href="sacramento/faq" class="white_href_header">FAQ</a></li>
-     <li><a href="sacramento/shop" class="white_href_header">Shop</a></li>
-     <li><a href="sacramento/suggestions" class="white_href_header">Suggestions</a></li>
-     <li><a href="sacramento/boxcontent" class="white_href_header">What's in the box?</a></li>
-     <li><a href="sacramento/contact" class="white_href_header">Contact Us</a></li>
-     <ul class="nav navbar-nav navbar-right">
-       <li class="dropdown">
-         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" class="white_href_header"> <span class="glyphicon glyphicon-shopping-cart"></span id="white"> 7 - Items<span class="caret"></span></a>
-         <ul class="dropdown-menu dropdown-cart" role="menu">
-             <li>
-                 <span class="item">
-                   <span class="item-left">
-                       <img src="http://lorempixel.com/50/50/" alt="" class="img_header"/>
-                       <span class="item-info">
-                           <span>Item name</span>
-                           <span>23$</span>
-                       </span>
-                   </span>
-                   <span class="item-right">
-                       <button class="btn btn-xs btn-danger pull-right">x</button>
-                   </span>
-               </span>
-             </li>
-             <li>
-                 <span class="item">
-                   <span class="item-left">
-                       <img src="http://lorempixel.com/50/50/" alt="" class="img_header"/>
-                       <span class="item-info">
-                           <span>Item name</span>
-                           <span>23$</span>
-                       </span>
-                   </span>
-                   <span class="item-right">
-                       <button class="btn btn-xs btn-danger pull-right">x</button>
-                   </span>
-               </span>
-             </li>
-             <li>
-                 <span class="item">
-                   <span class="item-left">
-                       <img src="http://lorempixel.com/50/50/" alt="" class="img_header"/>
-                       <span class="item-info">
-                           <span>Item name</span>
-                           <span>23$</span>
-                       </span>
-                   </span>
-                   <span class="item-right">
-                       <button class="btn btn-xs btn-danger pull-right">x</button>
-                   </span>
-               </span>
-             </li>
-             <li>
-                 <span class="item">
-                   <span class="item-left">
-                       <img src="http://lorempixel.com/50/50/" alt="" class="img_header"/>
-                       <span class="item-info">
-                           <span>Item name</span>
-                           <span>23$</span>
-                       </span>
-                   </span>
-                   <span class="item-right">
-                       <button class="btn btn-xs btn-danger pull-right">x</button>
-                   </span>
-               </span>
-             </li>
-             <li class="divider"></li>
-             <li><a class="text-center" id="view_cart" href="" class="white_href_header">View Cart</a></li>
+         ?>
+           <li <?= $index;?>>
+             <a href="/" class="white_href_header">Home</a>
+           </li>
+           <li <?= $faq ?>><a href="sacramento/faq" class="white_href_header">FAQ</a></li>
+           <li <?= $shop ?>><a href="sacramento/shop" class="white_href_header">Shop</a></li>
+           <li <?= $suggestions ?>><a href="sacramento/suggestions" class="white_href_header">Suggestions</a></li>
+           <li <?= $in_the_box ?>><a href="sacramento/in_the_box" class="white_href_header">What's in the box?</a></li>
+           <li <?= $contact ?>><a href="sacramento/contact" class="white_href_header">Contact Us</a></li>
+           <li <?= $cart ?>><a href='sacramento/cart' class="white_href_header">Cart</a></li>
+           </ul>
          </ul>
-       </li>
-     </ul>
-   </ul>
-   </nav>
-  	<!--Page Preloading-->
+         </nav>  	<!--Page Preloading-->
     <div id="preloader"><div id="spinner"></div></div>
 
     <!--Hero Unit with Slider-->
@@ -230,7 +185,7 @@ body {
                 <h2 style="margin-top:70px;" class="text-light text-left">Send the gift of Sacramento, in a Box!</h2>
                 <p>Great Present For Any Ocassion</p>
                 <p>Create, Customize and Order Your Box</p>
-                <a class="btn btn-primary" href="#">Shop All Products</a>
+                <a class="btn btn-primary" href="sacramento/shop">Shop All Products</a>
               </div>
               <div class="col-lg-8 col-md-8 col-sm-8 animated fadeInRight">
               	<div class="video">

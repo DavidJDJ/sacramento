@@ -2,7 +2,7 @@
 
 class admin extends CI_Controller {
 	function index() {
-		if ($this->session->userdata('logged_in') == TRUE && $this->session->userdata('level') == 'admin') {
+		if ($this->session->userdata('logged_in') == TRUE ) {
 			// echo "Admin is logged in";
 			// var_dump($this->session->all_userdata());
 			$this->load->view('admin_views/dashboard');

@@ -38,7 +38,7 @@ class Sacramento extends CI_Controller {
 		$this->load->view('shop_box', array("products" => $result));
 	}
 	public function admin() {
-		if ($this->session->userdata('logged_in') == TRUE && $this->session->userdata('level') == 'admin') {
+		if ($this->session->userdata('logged_in') == TRUE) {
 			// echo "Admin is logged in";
 			// var_dump($this->session->all_userdata());
 			redirect('../admin/');

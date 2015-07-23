@@ -168,18 +168,6 @@ body {
 </div>   
     
 <!--Libraries and Plugins-->
-    <script src="../assets/index/js/libs/jquery-1.11.2.min.js"></script>
-        <script src="../assets/index/js/libs/jquery.easing.1.3.js"></script>
-        <script src="../assets/index/js/plugins/bootstrap.min.js"></script>
-        <script src="../assets/index/js/plugins/jquery.touchSwipe.min.js"></script>
-        <script src="../assets/index/js/plugins/jquery.placeholder.js"></script>
-    <script src="../assets/index/js/plugins/icheck.min.js"></script>
-    <script src="../assets/index/js/plugins/jquery.validate.min.js"></script>
-        <script src="../assets/index/js/plugins/gallery.js"></script>
-    <script src="../assets/index/js/plugins/jquery.fitvids.js"></script>
-        <script src="../assets/index/js/plugins/jquery.bxslider.min.js"></script>
-        <script src="../assets/index/js/plugins/waypoints.min.js"></script>
-    <script src="../assets/index/js/plugins/smoothscroll.js"></script>
         <script src="../assets/index/js/landing2.js"></script>
 <?php include 'footer.php' ?>
 </body>

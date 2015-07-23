@@ -90,7 +90,7 @@
   
 <?php     include('footer.php') 
 ?>
-    <script src="../assets/plug_in/suggest/js/classie.js"></script>
+    <script src="../assets/plug_in/suggestion/js/classie.js"></script>
     <script>
       (function() {
         // trim polyfill : https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/Trim
@@ -125,18 +125,7 @@
           }
         }
       })();
-    </script>
-        <script src="../assets/index/js/libs/jquery.easing.1.3.js"></script>
-        <script src="../assets/index/js/plugins/bootstrap.min.js"></script>
-        <script src="../assets/index/js/plugins/jquery.touchSwipe.min.js"></script>
-        <script src="../assets/index/js/plugins/jquery.placeholder.js"></script>
-        <script src="../assets/index/js/plugins/icheck.min.js"></script>
-        <script src="../assets/index/js/plugins/jquery.validate.min.js"></script>
-        <script src="../assets/index/js/plugins/gallery.js"></script>
-        <script src="../assets/index/js/plugins/jquery.fitvids.js"></script>
-        <script src="../assets/index/js/plugins/jquery.bxslider.min.js"></script>
-        <script src="../assets/index/js/plugins/waypoints.min.js"></script>
-        <script src="../assets/index/js/plugins/smoothscroll.js"></script>
+    </script>     
         <script src="../assets/index/js/landing2.js"></script>
   </body>
 </html>

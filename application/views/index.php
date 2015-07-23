@@ -68,65 +68,11 @@
            padding-right: 112px;
            padding-top: 26px;
          }
-        /*..................menu_drop_down...............*/
+         .social_media_footer{
+          margin-left: 47px;
+         }
 
-         ul.dropdown-cart{
-         min-width:250px;
-        }
-        ul.dropdown-cart li .item{
-         display:block;
-         padding:3px 10px;
-         margin: 3px 0;
-        }
-        ul.dropdown-cart li .item:hover{
-         background-color:#f3f3f3;
-        }
-        ul.dropdown-cart li .item:after{
-         visibility: hidden;
-         display: block;
-         font-size: 0;
-         content: " ";
-         clear: both;
-         height: 0;
-        }
-        .dropdown-menu
-        {
-        min-width: 221px !important;
-        }
-
-        ul.dropdown-cart li .item-left{
-         float:left;
-        }
-        ul.dropdown-cart li .item-left .img_header,
-        ul.dropdown-cart li .item-left span.item-info{
-         float:left;
-        }
-        ul.dropdown-cart li .item-left span.item-info{
-         margin-left:10px;
-        }
-        ul.dropdown-cart li .item-left span.item-info span{
-         display:block;
-        }
-        ul.dropdown-cart li .item-right{
-         float:right;
-        }
-        ul.dropdown-cart li .item-right button{
-         margin-top:14px;
-        }
-        #view_cart{
-        color: black !important;
-        }
-        #id {
-         color: white;
-        }
-        .navbar-default .navbar-nav>li>a {
-         color: white !important;
-        }
-        .navbar {
-            margin-bottom: 0px;
-            border-radius: 0px;
-            border: none;
-        }
+       
            </style>
          <nav id="nav" class="navbar navbar-default">
          <img src="../assets/img/company_logo.png" width=100 height=100 class="img_header">

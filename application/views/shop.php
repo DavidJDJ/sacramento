@@ -40,11 +40,22 @@
       <?php include('header.php') ?>
       <div class="container">
              <div class="row">
+
+                <?php for ($i=0; $i < count($boxes); $i++) { 
+                    if ($i<4) { ?>
                  <div class="col-md-4 text-center">
+                    <?php } 
+                    else { ?>
+                 <div class="col-md-6 text-center">
+                    <?php } ?>
                      <img src="../assets/img/company_logo.png" class="product_images">
-                     <p>Clothing box</p>
+                     <p>
+                        <a href="/placeorders/show_box<?= '/'.$boxes[$i]['id'] ?>"><?= $boxes[$i]['name'] ?></a>
+                    </p>
                  </div>
-                 <div class="col-md-4 text-center">
+                 <?php } ?>
+
+<!--                  <div class="col-md-4 text-center">
                      <img src="../assets/img/company_logo.png" class="product_images">
                      <p>box with 10 Items</p>
                  </div>
@@ -59,7 +70,7 @@
                  <div class="col-md-6 text-center">
                      <img src="../assets/img/company_logo.png" class="product_images">
                      <p>box with 15 Items</p>
-                 </div>
+                 </div> -->
              </div>
 
      </div>

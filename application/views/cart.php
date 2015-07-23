@@ -92,7 +92,7 @@
 
 	<div data-role="page" id="pagetwo">
 		<div id="container">
-		    <form id='register' action="" method='post'>
+		    <form id='register' action="sessions/register" method='post'>
 				<fieldset style="display:block; width:365px;">
 					<legend style="text-align:left;">Shipping Information</legend>
 					<input type='hidden' name='action' value='register'/>
@@ -110,6 +110,14 @@
 					<input type='text' name='email' id='email' maxlength="50" />
 					<br><br>
 
+<!-- 					<label for='password' >Password (if you like to register):</label>
+					<input type='password' name='password' id='password' maxlength="50" />
+					<br><br>					
+
+					<label for='password_confirmation' >Confirm Password (if you like to register):</label>
+					<input type='password' name='password_confirmation' id='password_confirmation' maxlength="50" />
+					<br><br> -->
+
 					<label for='address' >Address:</label>
 					<input type='text' name='address' id='address' maxlength="50" />
 					<br><br>
@@ -118,8 +126,8 @@
 					<input type='text' name='address2' id='address2' maxlength="50" />
 					<br><br>
 
-					<label for='password' >City:</label>
-					<input type='password' name='password_confirmation' id='password_confirmation' maxlength="50" />
+					<label for='city' >City:</label>
+					<input type='text' name='city' id='city' maxlength="50" />
 					<br><br>
 
 					<label for='' >State:</label>

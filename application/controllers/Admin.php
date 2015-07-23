@@ -5,7 +5,9 @@ class admin extends CI_Controller {
 		if ($this->session->userdata('logged_in') == TRUE ) {
 			// echo "Admin is logged in";
 			// var_dump($this->session->all_userdata());
-			$this->load->view('admin_views/dashboard');
+			$this->load->model('admins');
+			$suggestions = $this->admins->fetch_suggestions();
+			$this->load->view('admin_views/dashboard', array('suggestions' => $suggestions));
 		} else {
 		$this->load->view('sacramento/admin');
 		}

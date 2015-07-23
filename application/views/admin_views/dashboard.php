@@ -148,8 +148,38 @@
                     <!--COMPLETED ACTIONS DONUTS CHART-->
 						<h3>SUGGESTIONS</h3>
                                         
+
+
+                <?php 
+                $counter = 0;
+                foreach ($suggestions as $suggestion)
+                    {
+                      if ($counter < min(count($suggestions), 5))
+                      {
+                ?>
+                        <!--  Action -->
+                        <div class="desc">
+                          <div class="thumb">
+                            <span class="badge bg-theme"><i class="fa fa-clock-o"></i></span>
+                          </div>
+                          <div class="details">
+                            <p><muted><?= date("Y-m-d, H:i", strtotime($suggestion['created_at'])) ?></muted><br/>
+                               <a href="#"><?= $suggestion['name'] ?>: </a><?= $suggestion['suggestion'] ?>.<br/>
+                            </p>
+                          </div>
+                        </div>
+                <?php  
+                      }
+                      else 
+                      {
+                        break;
+                      }
+                      $counter += 1;
+                    }
+                ?> 
+
                       <!-- First Action -->
-                      <div class="desc">
+<!--                       <div class="desc">
                       	<div class="thumb">
                       		<span class="badge bg-theme"><i class="fa fa-clock-o"></i></span>
                       	</div>
@@ -159,8 +189,8 @@
                       		</p>
                       	</div>
                       </div>
-                      <!-- Second Action -->
-                      <div class="desc">
+                      <! Second Action -->
+<!--                       <div class="desc">
                       	<div class="thumb">
                       		<span class="badge bg-theme"><i class="fa fa-clock-o"></i></span>
                       	</div>
@@ -169,9 +199,9 @@
                       		   <a href="#">Diana Kennedy</a> purchased a year subscription.<br/>
                       		</p>
                       	</div>
-                      </div>
+                      </div> -->
                       <!-- Third Action -->
-                      <div class="desc">
+<!--                       <div class="desc">
                       	<div class="thumb">
                       		<span class="badge bg-theme"><i class="fa fa-clock-o"></i></span>
                       	</div>
@@ -180,9 +210,9 @@
                       		   <a href="#">Brandon Page</a> purchased a year subscription.<br/>
                       		</p>
                       	</div>
-                      </div>
+                      </div> -->
                       <!-- Fourth Action -->
-                      <div class="desc">
+<!--                       <div class="desc">
                       	<div class="thumb">
                       		<span class="badge bg-theme"><i class="fa fa-clock-o"></i></span>
                       	</div>
@@ -191,9 +221,9 @@
                       		   <a href="#">Mark Twain</a> commented your post.<br/>
                       		</p>
                       	</div>
-                      </div>
+                      </div> -->
                       <!-- Fifth Action -->
-                      <div class="desc">
+<!--                       <div class="desc">
                       	<div class="thumb">
                       		<span class="badge bg-theme"><i class="fa fa-clock-o"></i></span>
                       	</div>
@@ -202,7 +232,7 @@
                       		   <a href="#">Daniel Pratt</a> purchased a wallet in your store.<br/>
                       		</p>
                       	</div>
-                      </div>
+                      </div> -->
 
                        
                         <!-- CALENDAR-->

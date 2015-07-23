@@ -21,6 +21,12 @@ class Admins extends CI_Model {
 		$this->load->database();
 		return $this->db->query('SELECT * FROM boxes')->result_array();
 	}
+
+	public function fetch_suggestions()
+	{
+		$this->load->database();
+		return $this->db->query("SELECT * FROM suggestion order by created_at")->result_array();
+	}
 }
 
 

@@ -144,7 +144,7 @@ body {
   padding: 0px;
 }
 .container {
-  margin-left: 300px;
+  padding-left: 250px;
 }
 #dash_link {
   color: white;
@@ -169,4 +169,7 @@ body {
  }
  #price_div, #box_name {
    margin: 10px 0px;
+ }
+ #errors {
+  color: red;
  }

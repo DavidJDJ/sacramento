@@ -18,8 +18,8 @@ class admin extends CI_Controller {
 			$this->session->set_flashdata('errors', validation_errors());
 			redirect('../sacramento/admin');
 		} else {
-			$this->load->model('sacramento_model');
-			$result = $this->sacramento_model->admin_user($this->input->post('email'));
+			$this->load->model('admin_model');
+			$result = $this->admin_model->admin_user($this->input->post('email'));
 			// var_dump($result);
 			// echo md5($this->input->post('password') . '' . $result['salt']);
 			if ($result['password'] == md5($this->input->post('password') . '' . $result['salt'])) {
@@ -51,43 +51,70 @@ class admin extends CI_Controller {
 		}
 	}
 	function add_box() {
-		// var_dump($this->input->post());
 		if ($this->input->post()) {
-			var_dump($_FILES);
-			$target_dir = "assets/uploads/";
-			$target_file = $target_dir . basename($_FILES["image"]["name"]);
-			$uploadOk = 1;
-			$imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
-			// Check if image file is a actual image or fake image
-		    $check = getimagesize($_FILES["image"]["tmp_name"]);
-		    if($check !== false) {
-		        // echo "File is an image - " . $check["mime"] . ".";
-		        $uploadOk = 1;
-		    } else {
-		        $this->session->set_flashdata('errors', "File is not an image.");
-		        $uploadOk = 0;
-		    }
-			// Check if file already exists
-			if (file_exists($target_file)) {
-			    $this->session->set_flashdata('errors', "Sorry, file already exists.");
-			    $uploadOk = 0;
-			}
-			// Check if $uploadOk is set to 0 by an error
-			if ($uploadOk == 0) {
-			    echo "Sorry, your file was not uploaded.";
-				var_dump($this->session->flashdata());
-				die();
-				// redirect('admin/add_box');
-			// if everything is ok, try to upload file
+			$errors = [];
+			// var_dump($this->input->post());
+			// die();
+
+			$this->load->library('form_validation');
+			$this->form_validation->set_rules('name', "Name", "trim|required");
+			$this->form_validation->set_rules("description", "Description", "trim|required");
+			$this->form_validation->set_rules("amount", "Amount", "trim|required|integer");
+			$this->form_validation->set_rules("item_amount", "Amount of Items", "trim|required|integer");
+			// $this->form_validation->set_rules('image', "Image", "required");
+			if ($this->form_validation->run() == false) {
+				$this->session->set_flashdata('validation_errors', validation_errors());
+				redirect('../admin/add_box');
 			} else {
-			    if (copy($_FILES["image"]["tmp_name"], $target_file)) {
-			        echo "The file ". basename( $_FILES["image"]["name"]). " has been uploaded.";
-			    } else {
-			        echo "Sorry, there was an error uploading your file.";
-			    }
+				if ($_FILES["image"]["tmp_name"]) {
+
+					$target_dir = "assets/uploads/";
+					$target_file = $target_dir . basename($_FILES["image"]["name"]);
+					$uploadOk = 1;
+					$imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
+					// Check if image file is a actual image or fake image
+				    $check = getimagesize($_FILES["image"]["tmp_name"]);
+				    if($check !== false) {
+				        $uploadOk = 1;
+				    } else {
+				        $errors[] = "<p>File is not an image.</p>";
+				        $uploadOk = 0;
+				    }
+					// Check if file already exists
+					if (file_exists($target_file)) {
+					    $errors[] = "<p>Sorry, file already exists.</p>";
+					    $uploadOk = 0;
+					}
+					// Allow certain file formats
+					if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg" && $imageFileType != "gif" ) {
+						// echo "inside the not image validation";
+					    $errors[] = "<p>Sorry, only JPG, JPEG, PNG & GIF files are allowed.</p>";
+					    $uploadOk = 0;
+					}
+					// Check if $uploadOk is set to 0 by an error
+					if ($uploadOk == 0) {
+						$this->session->set_flashdata('errors', $errors);
+						redirect('../admin/add_box');
+					// if everything is ok, try to upload file
+					} else {
+					    if (copy($_FILES["image"]["tmp_name"], $target_file)) {
+					        $errors[] = "<p style='color: green'>The file ". basename( $_FILES["image"]["name"]). " has been succesfully uploaded.</p>";
+							$this->load->model('admins_model');
+							$this->session->set_flashdata('errors', $errors);
+							redirect('../admin/add_box');
+					    } else {
+					        $errors[] = "<p>Sorry, there was an error uploading your file.</p>";
+							$this->session->set_flashdata('errors', $errors);
+							redirect('../admin/add_box');
+					    }
+					}
+				} else {
+					$errors[] = '<p style="color: red">A image file is required</p>';
+					$this->session->set_flashdata('errors', $errors);
+					redirect('../admin/add_box');
+				}
 			}
 		} else {
-		var_dump($this->session->flashdata());
 		$this->load->view('admin_views/add_box');
 		}
 	}

@@ -1,7 +1,6 @@
 <?php
-var_dump($this->session->all_userdata());
-var_dump($this->session->flashdata());
-// var_dump($this->upload->data());
+// var_dump($this->session->all_userdata());
+// var_dump($this->session->flashdata());
  ?>
  <!DOCTYPE html>
  <html>
@@ -11,44 +10,21 @@ var_dump($this->session->flashdata());
  		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
  		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
  		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-		<link rel="stylesheet" href="../assets/styles/style_adminpage.css">
  	</head>
 	<body>
-		<!-- <div class="nav-side-menu">
-		    <div class="brand">Sacramento Logo</div>
-		    <i class="fa fa-bars fa-2x toggle-btn" data-toggle="collapse" data-target="#menu-content"></i>
-            <div class="menu-list">
-				<ul id="menu-content" class="menu-content collapse out">
-					  <a href="../admin/" class="dash_link">
-    					<li>
-    					  <i class="fa fa-dashboard fa-lg"></i> Dashboard
-    					</li>
-    				  </a>
-					<li  data-toggle="collapse" data-target="#products" class="collapsed">
-					  <a href="#"></i>Orders<span class="arrow"></span></a>
-					</li>
-					<ul class="sub-menu collapse" id="products">
-						<a href="../admin/ordered" class="dash_link"><li>Ordered</li></a>
-						<a href="../admin/shipped" class="dash_link"><li>Shipped</li></a>
-					</ul>
-					<li data-toggle="collapse" data-target="#service" class="collapsed">
-					  <a href="#">Products<span class="arrow"></span></a>
-					</li>
-					<ul class="sub-menu collapse" id="service">
-					  <a href="../admin/products" class="dash_link"><li>Products</li></a>
-					  <a href="../admin/add_product" class="dash_link"><li>Add Product</li></a>
-					  <a href="../admin/add_box" class="dash_link"><li>Add Box</li></a>
-					</ul>
-                    <ul class="sub-menu">
-                         <a href="admin/log_out" class="dash_link"><li>Log Out</li></a>
-                    </ul>
-				</ul>
-		 </div>
-		</div> -->
+        <?php include 'navbar.php' ?>
 		<div class="container">
+            <div id="errors">
             <?php if ($this->session->flashdata('errors')) {
-                        echo $this->session->flashdata('errors');
-                    }?>
+                    $errors = $this->session->flashdata('errors');
+                        for($i=0; $i < count($errors); $i++) {
+                            echo  $errors[$i]. "<br>";
+                        }
+                  }
+                  if ($this->session->flashdata('validation_errors')) {
+                      echo $this->session->flashdata('validation_errors');
+                  } ?>
+              </div>
 			<h3>Add Box</h3>
 			<form method="post" action="add_box" enctype="multipart/form-data">
 			  <div class="form-group">

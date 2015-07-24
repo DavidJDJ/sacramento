@@ -132,7 +132,7 @@ button#send {
 </header>
 <section>
   <div class="arrow-up"></div>
-  <form id="contact" class="form-horizontal" role="form">
+  <form id="contact" class="form-horizontal" role="form" >
     <div class="form-group">  
       <div class="col-sm-12">
         <input id="name" name="name" type="text" placeholder="NAME" class="form-control">

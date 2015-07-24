@@ -1,5 +1,5 @@
 <?php
-// var_dump($this->session->all_userdata());
+var_dump($this->session->all_userdata());
 // var_dump($products);
 // var_dump($carts);
 // var_dump($this->session->flashdata('errors'));
@@ -15,9 +15,9 @@ function this_page()
 <html>
 <head>
 	<!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
-	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+	<!-- <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css"> -->
 	<!-- // <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script> -->
-	<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+	<!-- // <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script> -->
 
 
     <title>Cart</title>
@@ -118,7 +118,7 @@ function this_page()
 							  <tr>
 								  <td><?= $value['box'] ?></td>
 								  <td><?php $keys = array_keys($value);
-								  for($i = 2; $i < count($keys); $i++) {
+								  for($i = 3; $i < count($keys); $i++) {
 								  	?><p><?= $keys[$i] ?></p>
 								  <?php } ?>
 								  </td>

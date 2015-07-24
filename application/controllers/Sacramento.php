@@ -40,12 +40,17 @@ class Sacramento extends CI_Controller {
 		}
 		public function add_cart() {
 			if ($this->input->post()) {
+
 				if (count($this->input->post()) > $this->input->post('item_amount')-3) {
 					$this->session->set_flashdata('erors', "You can only chooose" . $this->input->post('item_amount') . "items.");
 				} else {
+
 					$cart = $this->session->userdata('cart');
 					$cart[] = $this->input->post();
 					$this->session->set_userdata('cart', $cart);
+				} else if (!$this->session->userdata('cart')) {
+					$result[] = $this->input->post();
+					$this->session->set_userdata('cart', $result);
 				}
 			}
 			redirect('../sacramento/cart');
@@ -102,7 +107,7 @@ class Sacramento extends CI_Controller {
 	}
 
 	public function add_suggestion()
-	{	
+	{
 		$this->load->library('form_validation');
 		$this->form_validation->set_rules('name', 'Name', 'required');
 		$this->form_validation->set_rules('suggestion', 'Suggestion', 'required|min_length[4]');

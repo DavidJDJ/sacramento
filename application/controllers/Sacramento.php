@@ -38,12 +38,19 @@ class Sacramento extends CI_Controller {
 		$product_result = $this->sacramento_model->products();
 		$this->load->view('box_content', array('box' => $box_result, 'products' => $product_result));
 		}
-		public function cart() {
+		public function add_cart() {
 			if ($this->input->post()) {
-				$cart = $this->session->userdata('cart');
-				$cart[] = $this->input->post();
-				$this->session->set_userdata('cart', $cart);
+				if (count($this->input->post()) > $this->input->post('item_amount')-3) {
+					$this->session->set_flasahdata('erors', "You can only chooose" . $this->input->post('item_amount') . "items.");
+				} else {
+					$cart = $this->session->userdata('cart');
+					$cart[] = $this->input->post();
+					$this->session->set_userdata('cart', $cart);
+				}
 			}
+			redirect('../sacramento/cart');
+		}
+		public function cart() {
 			$this->load->model('sacramento_model');
 			$boxes_result = $this->sacramento_model->fetch_boxes();
 			$products_result = $this->sacramento_model->products();
@@ -82,7 +89,7 @@ class Sacramento extends CI_Controller {
 			var_dump($this->session->all_userdata());
 			var_dump($this->input->post());
 			$this->load->model('sacramento_model');
-			$this->sacramento_model->add_user();
+			// $this->sacramento_model->add_user($this->input->post(); $this->session->all_userdata());
 			redirect('/success');
 		}
 	}

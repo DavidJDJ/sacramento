@@ -148,6 +148,9 @@ $location=this_page();
      .p_header {
          margin-right: 0px;
      }
+     .errors {
+         color: red;
+     }
         </style>
       <nav id="nav" class="navbar navbar-default">
       <img src="../../assets/img/company_logo.png" width=100 height=100 class="img_header">
@@ -198,6 +201,11 @@ $location=this_page();
                 <img src='../../<?= $box[0]['img'] ?>' id='product_img'>
             </div>
             <div class="col-md-6">
+                <div class="errors">
+                <?php if ($this->session->flashdata('errors')) {
+                    echo $this->session->flashdata('errors');
+                } ?>
+                </div>
               <h3><?= $box[0]['name'] ?></h3>
               <p class="lean">Price: $<?= $box[0]['price'] ?></p>
               <p><?= $box[0]['description'] ?></p>
@@ -212,8 +220,9 @@ $location=this_page();
                       <h4 class="modal-title" id="myModalLabel">Choose Products</h4>
                     </div>
                     <div class="modal-body">
-                        <form id='choose' action="../cart" method='post'>
+                        <form id='choose' action="../add_cart" method='post'>
                           <input type="hidden" name="box" value="<?= $box[0]['name'] ?>">
+                          <input type="hidden" name="item_amount" value="<?= $box[0]['item_amount'] ?>">
                           <input type="hidden" name="box_price" value="<?= $box[0]['price'] ?>">
                           <fieldset style="display:block; width:365px;">
                                 <legend style="text-align:left;">Pick out of <?= $box[0]['item_amount'] ?></legend>

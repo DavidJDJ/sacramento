@@ -16,7 +16,7 @@ function this_page()
    <style type="text/css">
     body
     {
-      background-color: #C8D2D9;
+     background-color: white !important;
     }
     .product_image {
         width: 200px;

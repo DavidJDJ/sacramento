@@ -85,11 +85,22 @@
           </svg>
         </span>
           <input type="submit" class="submit"></input>
+          <?php if(null !== $this->session->flashdata('contact_confirmation'))
+            {
+      ?>
+      <div class="card-panel">
+      <span class="bg-success"><?php echo $this->session->flashdata('contact_confirmation') ?></span>
+    </div>
+      <?php } ?>
+      <?php if(null !== $this->session->flashdata('errors'))
+            {
+      ?>
+      <div class="bg-danger">
+      <?php echo $this->session->flashdata('errors') ?>
+    </div>
+      <?php } ?>
       </section></center>
               </form>
-
-      
-      
   
 <?php     include('footer.php') 
 ?>

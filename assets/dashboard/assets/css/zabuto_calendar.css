@@ -3,8 +3,10 @@
  */
 
 div.zabuto_calendar {
-    margin: 0;
-    padding: 10px;
+    margin: -8px;
+    padding: 0px;
+    padding-bottom: 50px;
+    height: 250px;
 }
 
 .calendar-month-header 		{font-size:116%!important;}
@@ -12,8 +14,10 @@ div.zabuto_calendar {
 
 div.zabuto_calendar .table {
     width: 100%;
+    height: 250px;
     margin: 0;
     padding: 0px;
+
 }
 
 div.zabuto_calendar .table th,

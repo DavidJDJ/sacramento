@@ -29,7 +29,7 @@
     @import url(http://fonts.googleapis.com/css?family=Open+Sans:300,800);
 
 body {
-  font-family: 'Open Sans';
+  
   font-size: 1.5em;
   background-color: white !important;
 }
@@ -126,7 +126,7 @@ body {
   <input type="checkbox" id="question1" name="q"  class="questions">
   <div class="plus">+</div>
   <label for="question1" class="question">
-    Who is the Baltimore box for?
+    Who is the Sacramento box for?
   </label>
   <div class="answers">
         <p>Anyone who has had any kind of connection with Baltimore at some point in their life would be an ideal candidate for this box. It makes a really great gift idea for someone who used to live in the area and has since moved out of town.

@@ -68,6 +68,10 @@ function this_page()
 	});
 	</script>
 	<style>
+    body
+    {
+        background-color: white !important;
+    }
 	#container {
 	margin: 25px;
 	padding: 30px;

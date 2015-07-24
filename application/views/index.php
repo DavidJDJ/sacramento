@@ -34,7 +34,7 @@
          body
          {
             margin-top: 0px !important;
-           background-color: #C8D2D9;
+           background-color: white !important;
          }
          #nav
          {
@@ -129,8 +129,8 @@
             <div class="slide">
               <div class="col-lg-4 col-md-4 col-sm-4 animated fadeInDown">
                 <h2 style="margin-top:70px;" class="text-light text-left">Send the gift of Sacramento, in a Box!</h2>
-                <p>Great Present For Any Ocassion</p>
-                <p>Create, Customize and Order Your Box</p>
+                <p>We bring the best of Sacramento's food and snacks to people around the country.</p>
+                
                 <a class="btn btn-primary" href="sacramento/shop">Shop All Products</a>
               </div>
               <div class="col-lg-8 col-md-8 col-sm-8 animated fadeInRight">

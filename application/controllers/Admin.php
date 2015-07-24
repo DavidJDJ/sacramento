@@ -7,7 +7,8 @@ class admin extends CI_Controller {
 			// var_dump($this->session->all_userdata());
 			$this->load->model('admins');
 			$suggestions = $this->admins->fetch_suggestions();
-			$this->load->view('admin_views/dashboard', array('suggestions' => $suggestions));
+			$contact=$this->admins->fetch_contact();
+			$this->load->view('admin_views/dashboard', array('suggestions' => $suggestions,'contact'=>$contact));
 		} else {
 		$this->load->view('sacramento/admin');
 		}

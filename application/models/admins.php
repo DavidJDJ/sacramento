@@ -25,7 +25,12 @@ class Admins extends CI_Model {
 	public function fetch_suggestions()
 	{
 		$this->load->database();
-		return $this->db->query("SELECT * FROM suggestion order by created_at")->result_array();
+		return $this->db->query("SELECT * FROM suggestion order by created_at DESC")->result_array();
+	}
+	public function fetch_contact()
+	{
+		$this->load->database();
+		return $this->db->query("SELECT * FROM contact order by created_at DESC")->result_array();
 	}
 	public function remove_product($post) {
 		$this->load->database();

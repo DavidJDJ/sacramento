@@ -96,10 +96,46 @@ class Sacramento extends CI_Controller {
 
 
 	public function add_suggestion()
-	{
+	{	
+		$this->load->library('form_validation');
+		$this->form_validation->set_rules('name', 'Name', 'required');
+		$this->form_validation->set_rules('suggestion', 'Suggestion', 'required|min_length[4]');
+		if ($this->form_validation->run() == FALSE)
+		{
+			$errors=$this->view_data["errors"] = validation_errors();
+			$this->session->set_flashdata('errors',$errors);
+			$this->suggestions();
+		}
+		else
+		{
 		$post = $this->input->post();
 		$this->load->model('sacramento_model');
 		$this->sacramento_model->add_suggestion($post);
+		$confirmation="Your message has been picked up by a flying pidgeon. Thanks for sharing.";
+		$this->session->set_flashdata('contact_confirmation', $confirmation);
 		$this->suggestions();
+		}
+	}
+	public function add_contact()
+	{
+		$this->load->library('form_validation');
+		$this->form_validation->set_rules('first_name', 'First Name', 'required');
+		$this->form_validation->set_rules('message', 'Message', 'required');
+		$this->form_validation->set_rules('email', 'Email', 'required|valid_email');
+		if ($this->form_validation->run() == FALSE)
+		{
+			$errors=$this->view_data["errors"] = validation_errors();
+			$this->session->set_flashdata('errors',$errors);
+			$this->contact();
+		}
+		else
+		{
+			$post=$this->input->post();
+			$this->load->model('sacramento_model');
+			$this->sacramento_model->add_contact($post);
+			$confirmation="Your message has been picked up by a flying pidgeon. We will respond really fast.";
+			$this->session->set_flashdata('contact_confirmation', $confirmation);
+			$this->contact();
+		}
 	}
 }

@@ -132,7 +132,7 @@ button#send {
 </header>
 <section>
   <div class="arrow-up"></div>
-  <form id="contact" class="form-horizontal" role="form" >
+  <form id="contact" class="form-horizontal" role="form" method="post" action="../sacramento/add_contact">
     <div class="form-group">  
       <div class="col-sm-12">
         <input id="name" name="name" type="text" placeholder="NAME" class="form-control">
@@ -148,8 +148,22 @@ button#send {
         <textarea class="form-control" id="message" name="message" placeholder="MESSAGE"></textarea>
       </div>
     </div>
-    <button id="send" name="send" class="btn btn-block">send</button>
+    <button type="submit" id="send" name="send" class="btn btn-block">send</button>
   </form>
+  <?php if(null !== $this->session->flashdata('contact_confirmation'))
+            {
+      ?>
+      <div class="card-panel">
+      <span class="bg-success"><?php echo $this->session->flashdata('contact_confirmation') ?></span>
+    </div>
+      <?php } ?>
+      <?php if(null !== $this->session->flashdata('errors'))
+            {
+      ?>
+      <div class="bg-danger">
+      <?php echo $this->session->flashdata('errors') ?>
+    </div>
+      <?php } ?>
 </section>
   </div>
   <!--Libraries and Plugins-->

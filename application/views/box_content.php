@@ -21,7 +21,7 @@ $location=this_page();
         <style type="text/css">
             body
             {
-              background-color: #C8D2D9;
+             background-color: white !important;
             }
             #product_img{
               width: 550px;

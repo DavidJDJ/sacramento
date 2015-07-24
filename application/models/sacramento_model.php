@@ -64,6 +64,12 @@ class sacramento_model extends CI_Model {
 		$this->db->query("INSERT INTO suggestion (name, suggestion, created_at)
 						VALUES (?,?,NOW())", array($post['name'], $post['suggestion']));
 	}
+	public function add_contact($post)
+	{
+		$this->load->database();
+		$this->db->query("INSERT INTO contact (name,email,message,created_at)
+						VALUES (?,?,?,NOW())",array($post['name'],$post['email'],$post['message']));
+	}
 }
 
  ?>

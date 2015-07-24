@@ -397,7 +397,7 @@ ul.sidebar-menu li a.active i {
 
 /* MAIN CONTENT CONFIGURATION */
 #main-content {
-    margin-left: 210px;
+    margin-left: 181px;
 }
 
 .header, .footer {
@@ -424,7 +424,7 @@ ul.sidebar-menu li a.active i {
     padding-right: 15px;
     padding-bottom: 15px;
     padding-top: 0px;
-    width: 100%;
+    width: 1280px;
 }
 
 a.logo {
@@ -767,6 +767,7 @@ ul.top-menu > li > a:hover, ul.top-menu > li > a:focus {
 .ds {
 	background: #ffffff;
 	padding-top: 20px;
+    height: 720px;
 }
 
 .ds h4 {

@@ -86,14 +86,20 @@ class Sacramento extends CI_Controller {
 			$this->session->set_flashdata('errors', validation_errors());
 			redirect('../sacramento/cart');
 		} else {
-			var_dump($this->session->all_userdata());
-			var_dump($this->input->post());
+			// var_dump($this->session->all_userdata());
+			// var_dump($this->input->post());
 			$this->load->model('sacramento_model');
-			// $this->sacramento_model->add_user($this->input->post(); $this->session->all_userdata());
-			redirect('/success');
+			$this->sacramento_model->add_order($this->input->post(), $this->session->all_userdata());
+			redirect('../sacramento/success');
 		}
 	}
-
+	public function success() {
+		$this->load->model('sacramento_model');
+		$products = $this->sacramento_model->products();
+		$user_products = $this->session->all_userdata();
+		$this->load->view('order_confirmation', array('user_products' => $user_products, 'products' => $products));
+		$this->session->sess_destroy();
+	}
 
 	public function add_suggestion()
 	{	

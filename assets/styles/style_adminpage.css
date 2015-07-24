@@ -155,10 +155,10 @@ body {
 .dash_link:visited {
   color: white;
 }
-#ordered {
+.ordered {
   color: #aa2a2a;
 }
-#shipped {
+.shipped {
   color: #659f2a;
 }
 .button {

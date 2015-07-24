@@ -27,14 +27,14 @@
 					    </tr>
 				    </thead>
 				    <tbody>
-				    <?php foreach ($orders as $order) 
+				    <?php foreach ($orders as $order)
 			  			{
 						  echo "<tr>";
 							  echo "<td>" . $order['order_id'] . "</td>";
 							  echo "<td>" . $order['line_1'] . "</td>";
 							  echo "<td>" . $order['city'] . "</td>";
 							  echo "<td>" . $order['state'] . "</td>";
-							  echo "<td>" . $order['status'] . "</td>";
+							  echo "<td><p class='ordered'>" . $order['status'] . "</p></td>";
 							  echo "<td><a class='btn btn-default btn-xs' href='/admin/mark_as_shipped/{$order['order_id']}'" . " role='button'>Shipped</a>
 							  <a class='btn btn-default btn-xs' href='#'' role='button'>View</a></td>";
 						  echo "</tr>";

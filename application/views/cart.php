@@ -196,7 +196,7 @@ function this_page()
                     			<div class="form-row">
                     			  <label>
                     				<span>State</span>
-                    				<select>
+                    				<select name="state">
                     					<option value="AL">Alabama</option>
                     					<option value="AK">Alaska</option>
                     					<option value="AZ">Arizona</option>

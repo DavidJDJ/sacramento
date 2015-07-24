@@ -34,12 +34,28 @@ class admin extends CI_Controller {
 			}
 		}
 	}
+
 	function ordered() {
-		$this->load->view('admin_views/orders');
+		//added by reza
+		$this->load->model('sacramento_model');
+		$orders = $this->sacramento_model->fetch_unshipped_orders();
+		$this->load->view('admin_views/orders', array('orders' => $orders));
 	}
+
 	function shipped() {
-		$this->load->view('admin_views/shipped');
+		//added by reza
+		$this->load->model('sacramento_model');
+		$orders = $this->sacramento_model->fetch_shipped_orders();
+		$this->load->view('admin_views/shipped', array('orders' => $orders));
+	}	
+
+	function mark_as_shipped($order_id) {
+		//added by reza
+		$this->load->model('sacramento_model');
+		$this->sacramento_model->mark_as_shipped($order_id);
+		redirect('../admin/ordered');
 	}
+
 	function products() {
 		$this->load->view('admin_views/products');
 	}
@@ -188,6 +204,7 @@ class admin extends CI_Controller {
 		$this->session->sess_destroy();
 		redirect('../sacramento/');
 	}
+
 }
 
 

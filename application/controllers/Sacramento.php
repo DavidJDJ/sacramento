@@ -86,4 +86,13 @@ class Sacramento extends CI_Controller {
 			redirect('/success');
 		}
 	}
+
+
+	public function add_suggestion()
+	{
+		$post = $this->input->post();
+		$this->load->model('sacramento_model');
+		$this->sacramento_model->add_suggestion($post);
+		$this->suggestions();
+	}
 }

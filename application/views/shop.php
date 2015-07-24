@@ -28,6 +28,9 @@
     <!--Modernizr-->
         <!-- // <script src="../assets/index/js/libs/modernizr.custom.js"></script> -->
 
+    <!-- Please call pinit.js only once per page -->
+    <script type="text/javascript" async defer  data-pin-color="red" data-pin-hover="true" 
+    src="//assets.pinterest.com/js/pinit.js"></script>
     <style type="text/css">
      body
      {
@@ -50,6 +53,7 @@
                      <div class="col-md-4 text-center">
                          <a href="/sacramento/show_box/<?= $box['id'] ?>">
                              <img src="../<?= $box['img'] ?>" class="product_images">
+
                              <p><?= $box['name'] ?></p>
                          </a>
                      </div>
@@ -93,5 +97,7 @@
         <!--  <script src="../assets/index/js/plugins/waypoints.min.js"></script> -->
     <!--  <script src="../assets/index/js/plugins/smoothscroll.js"></script> -->
             <script src="../assets/index/js/landing2.js"></script>
+            <script type="text/javascript" src="//assets.pinterest.com/js/pinit.js"></script>
+
  </body>
 </html>

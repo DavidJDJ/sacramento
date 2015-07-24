@@ -62,11 +62,12 @@
   <body>
         <div id="preloader"><div id="spinner"></div></div>
 <?php include('header.php'); 
-?>  
+?>          <form action="/sacramento/add_suggestion" method="post">
+
      <center> <section class="content bgcolor-1">
         <h2 id="suggestion">Feel like something's missing? Suggest it below to include it in the Sacramento Box!</h2>
         <span class="input input--nao">
-          <input class="input__field input__field--nao" type="text" id="input-1" />
+          <input class="input__field input__field--nao" type="text" id="name-1" name="name" />
           <label class="input__label input__label--nao" for="input-1">
             <span class="input__label-content input__label-content--nao">Name</span>
           </label>
@@ -75,7 +76,7 @@
           </svg>
         </span>
         <span class="input input--nao">
-          <input class="input__field input__field--nao" type="text" id="input-2" />
+          <input class="input__field input__field--nao" type="text" id="suggestion-2" name="suggestion"/>
           <label class="input__label input__label--nao" for="input-2">
             <span class="input__label-content input__label-content--nao">Suggestion</span>
           </label>
@@ -83,8 +84,10 @@
             <path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"/>
           </svg>
         </span>
-        <button class="submit">Submit</button>
+          <input type="submit" class="submit"></input>
       </section></center>
+              </form>
+
       
       
   

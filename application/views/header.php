@@ -95,7 +95,7 @@ color: black !important;
  color: white !important;
 }
    </style>
- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+ <!-- // <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script> -->
  <nav id="nav" class="navbar navbar-default">
  <img src="../assets/img/company_logo.png" width=100 height=100 class="img_header">
  <p class="p_header">Sacramento In A Box</p>

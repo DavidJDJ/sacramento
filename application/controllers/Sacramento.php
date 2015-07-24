@@ -41,9 +41,7 @@ class Sacramento extends CI_Controller {
 		public function add_cart() {
 			if ($this->input->post()) {
 
-				if (count($this->input->post()) > $this->input->post('item_amount')-3) {
-					$this->session->set_flashdata('erors', "You can only chooose" . $this->input->post('item_amount') . "items.");
-				} else {
+				if ($this->session->userdata('cart')) {
 
 					$cart = $this->session->userdata('cart');
 					$cart[] = $this->input->post();

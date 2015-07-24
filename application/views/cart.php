@@ -1,10 +1,11 @@
 <?php
-var_dump($this->session->all_userdata());
+// var_dump($this->session->all_userdata());
 // var_dump($products);
 // var_dump($carts);
 // var_dump($this->session->flashdata('errors'));
 $price = 0;
 $carts = $this->session->userdata('cart');
+// var_dump($carts);
 function this_page()
       {
           $page='cart';
@@ -122,8 +123,8 @@ function this_page()
 							  <tr>
 								  <td><?= $value['box'] ?></td>
 								  <td><?php $keys = array_keys($value);
-								  for($i = 3; $i < count($keys); $i++) {
-								  	?><p><?= $keys[$i] ?></p>
+								  for($i = 3; $i < count($keys)-1; $i++) {
+								  	?><p><?= str_replace('_', ' ', $keys[$i]) ?></p>
 								  <?php } ?>
 								  </td>
 								  <td>$<?= $value['box_price'] ?></td>

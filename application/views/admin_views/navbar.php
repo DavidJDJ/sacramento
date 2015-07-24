@@ -18,10 +18,11 @@
 				<a href="../admin/shipped" class="dash_link"><li>Shipped</li></a>
 			</ul>
 			<li data-toggle="collapse" data-target="#service" class="collapsed">
-			  <a href="#">Products<span class="arrow"></span></a>
+			  <a href="#">Products/Boxes<span class="arrow"></span></a>
 			</li>
 			<ul class="sub-menu collapse" id="service">
 			  <a href="../admin/products" class="dash_link"><li>Products</li></a>
+			  <a href="../admin/boxes" class="dash_link"><li>Boxes</li></a>
 			  <a href="../admin/add_product" class="dash_link"><li>Add Product</li></a>
 			  <a href="../admin/add_box" class="dash_link"><li>Add Box</li></a>
 			</ul>

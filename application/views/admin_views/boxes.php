@@ -14,19 +14,23 @@
 <body>
 
     <div class="container">
-    
+        <div class="row">
+            <div class="col-md-6">
+            </div>
+            <div class="col-md-6">
+            </div>
+        </div>      
 
     <table class="table" style="height: 452px;">
-<h2>Products</h2>        
+<h2>Boxes</h2>        
         <thead>
             <tr>
               <th>No.</th>
               <th>Image</th>
               <th>Name</th>
-              <th>Description</th>
+              <th>Number of Items in the Box</th>
+              <th>Box Price</th>
               <th>Action</th>
-<!--               <input type="text" name="search" id="search" placeholder="search items" class="pull-right"/></tr>
- -->              
         </thead>
         <tbody class="tb">
         </tbody>
@@ -70,7 +74,7 @@
                              $("#page_number").text(page_number+1);
         
                                  $.ajax({
-                                     url:"/admin/pagination_products",
+                                     url:"/admin/pagination_boxes",
                                      type:"POST",
                                      dataType: 'json',
                                      data:'page_number='+page_number,
@@ -84,7 +88,7 @@
                                                console.log(key);
                                                console.log(record_par_page[key].id);
                                                sr =(key+1);    
-                                                $(".tb").append('<tr><td>'+sr+'</td><td>'+data.image+'</td><td>'+data.name+'</td><td>'+data.description+'</td><td>'
+                                                $(".tb").append('<tr><td>'+sr+'</td><td>'+data.image+'</td><td>'+data.name+'</td><td>'+data.item_amount+'</td><td>'+data.price+'</td><td>'
                                                   +"<a class='btn btn-default' href='edit_product/"+ record_par_page[key].id + "' role='button'>Edit</a><a class='btn btn-default' href='remove_product/"+ record_par_page[key].id + "' role='button'>Remove</a>"           
                                                   +'</td></tr>');
 

@@ -214,22 +214,108 @@ class admin extends CI_Controller {
 		$this->load->view('admin_views/add_product', array('boxes' => $result));
 		}
 	}
-	function edit_prod($id) {
+	function edit_product($id) {
 		$this->load->model('admins');
 		$result = $this->admins->get_product($id);
 		$boxes = $this->admins->boxes_name();
-		$this->load->view('admin_views/edit', array('product' => $result, 'boxes' => $boxes));
+		$this->load->view('admin_views/edit_product', array('product' => $result, 'boxes' => $boxes));
+	}	
+	function remove_product($id) {
+		$this->load->model('admins');
+		$this->admins->remove_product_by_id($id);
+		redirect('../../admin/products');
+		}	
+
+	function edit_box($id) {
+		$this->load->model('admins');
+		$result = $this->admins->get_box($id);
+		$this->load->view('admin_views/edit_box', array('box' => $result));
+	}
+
+	function boxes() {
+		$this->load->view('admin_views/boxes');
 	}
 	function update_product() {
 		$this->load->model('admins');
-		$this->admins->update($this->input->post());
+		$this->admins->update_product($this->input->post());
+		redirect('../admin/products');
+	}	
+	function update_box() {
+		$this->load->model('admins');
+		$this->admins->update_box($this->input->post());
 		redirect('../admin/products');
 	}
 	function log_out() {
 		$this->session->sess_destroy();
 		redirect('../sacramento/');
 	}
+
+public function pagination_products()
+	{
+        $page_number = $this->input->post('page_number');
+        $item_par_page = 2;
+        $this->load->model('admins');
+        // $position = ($page_number*$item_par_page);
+        // $this->load->database();
+        // $result_set = $this->db->query("SELECT * FROM products LIMIT ".$position.",".$item_par_page);
+        $result_set = $this->admins->pagination_fetch_products_per_page($page_number, $item_par_page);
+        // var_dump($result_set);
+        $total_set =  $result_set->num_rows();
+        $page =  $this->db->get('products') ;
+        $total =  $page->num_rows();
+        //break total recoed into pages
+        $total = ceil($total/$item_par_page);
+        if($total_set>0){
+            $entries = null;
+    // get data and store in a json array
+            foreach($result_set->result() as $row){
+                 $entries[] = $row;
+            }
+            $data = array(
+                'TotalRows' => $total,
+                'Rows' => $entries
+            );              
+            $this->output->set_content_type('application/json');
+            echo json_encode(array($data));
+        }
+        exit;
+         
+   }
+
+   public function pagination_boxes()
+	{
+        $page_number = $this->input->post('page_number');
+        $item_par_page = 2;
+        $this->load->model('admins');
+        // $position = ($page_number*$item_par_page);
+        // $this->load->database();
+        // $result_set = $this->db->query("SELECT * FROM products LIMIT ".$position.",".$item_par_page);
+        $result_set = $this->admins->pagination_fetch_boxes_per_page($page_number, $item_par_page);
+        // var_dump($result_set);
+        $total_set =  $result_set->num_rows();
+        $page =  $this->db->get('products') ;
+        $total =  $page->num_rows();
+        //break total recoed into pages
+        $total = ceil($total/$item_par_page);
+        if($total_set>0){
+            $entries = null;
+    // get data and store in a json array
+            foreach($result_set->result() as $row){
+                 $entries[] = $row;
+            }
+            $data = array(
+                'TotalRows' => $total,
+                'Rows' => $entries
+            );              
+            $this->output->set_content_type('application/json');
+            echo json_encode(array($data));
+        }
+        exit;
+         
+   }
 }
+ 
+
 
 
 

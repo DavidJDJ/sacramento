@@ -52,6 +52,7 @@
 			    <label for="name">Name</label>
 			    <input type="text" class="form-control" id="name" value="<?= $product['name'] ?>" name="name">
 			  </div>
+			  <label for="name">Description</label>	  
 			  <textarea class="form-control" rows="3" name="description"><?= $product['description'] ?></textarea>
 			  <div id="box_name">
 				  <label>Preselected on box</label>

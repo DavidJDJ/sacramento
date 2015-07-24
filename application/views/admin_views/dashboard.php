@@ -16,7 +16,7 @@
     <style>
     /* Instagram formatting */
     iframe{
-     margin-left: 45px;
+     margin-left: 8%;
      
     }
     #hello{
@@ -30,10 +30,13 @@
     }
     #wrapper{
       width: 90% !important;
-      margin-left: 180px;
+      margin-left: 8%;
+      height: auto;
     }
     #weather_area{
-      margin-left: -81px;
+      margin-left: -5%;
+     overflow: hidden;
+      width: 100%;
     }
     #search_img{
       margin-bottom: 20px;
@@ -73,7 +76,7 @@
 					  			<span class="li_heart"></span>
 					  			<div id="fb_likes"></div>
                   			</div>
-					  			<div id="fb_likes2"> </div>
+					  		
                   		</div>
                   		
                   	
@@ -118,7 +121,7 @@
                 </div>
 				
                <!-- www.intagme.com -->
-                  <iframe src="http://www.intagme.com/in/?u=dmlzaXRzYWNyYW1lbnRvfHNsfDI3MHwxfDF8fG5vfDV8dW5kZWZpbmVkfG5v" allowTransparency="true" frameborder="0" scrolling="no" style="border:none; overflow:hidden; width:400px; height: 200px" ></iframe>
+                  <iframe src="http://www.intagme.com/in/?u=dmlzaXRzYWNyYW1lbnRvfHNsfDI3MHwxfDF8fG5vfDV8dW5kZWZpbmVkfG5v" allowTransparency="true" frameborder="0" scrolling="no" style="border:none; overflow:hidden; width:200px; height: 200px" ></iframe>
 						  </div> 
             </div><!-- /col-md-4 -->
 						
@@ -129,7 +132,7 @@
 									<h5>Track a Package</h5>
 								</div>
                 <img id="search_img" src="../assets/img/search.png" alt="search img" width=50 height=50>
-                <div class="as-track-button" data-size="large" data-responsive="false" data-width="280px"></div>
+                <div class="as-track-button" data-size="large" data-responsive="false" data-width="230px"></div>
 							</div>
 						</div><!-- /col-md-4 -->
 						

@@ -47,7 +47,7 @@ class admin extends CI_Controller {
 		$this->load->model('sacramento_model');
 		$orders = $this->sacramento_model->fetch_shipped_orders();
 		$this->load->view('admin_views/shipped', array('orders' => $orders));
-	}	
+	}
 
 	function mark_as_shipped($order_id) {
 		//added by reza
@@ -57,7 +57,21 @@ class admin extends CI_Controller {
 	}
 
 	function products() {
-		$this->load->view('admin_views/products');
+		$this->load->model('admins');
+		$this->load->model('sacramento_model');
+		if ($this->input->post()){
+			if ($this->input->post('product') == 'product') {
+				$this->admins->remove_product($this->input->post());
+				redirect('../admin/products');
+			}
+			if ($this->input->post('product') == 'box') {
+				$this->admins->remove_box($this->input->post());
+				redirect('../admin/products');
+			}
+		}
+		$result = $this->sacramento_model->products();
+		$boxes = $this->admins->boxes_name();
+		$this->load->view('admin_views/products', array('products' => $result, 'boxes' => $boxes));
 	}
 	function add_box() {
 		if ($this->input->post()) {
@@ -200,11 +214,21 @@ class admin extends CI_Controller {
 		$this->load->view('admin_views/add_product', array('boxes' => $result));
 		}
 	}
+	function edit_prod($id) {
+		$this->load->model('admins');
+		$result = $this->admins->get_product($id);
+		$boxes = $this->admins->boxes_name();
+		$this->load->view('admin_views/edit', array('product' => $result, 'boxes' => $boxes));
+	}
+	function update_product() {
+		$this->load->model('admins');
+		$this->admins->update($this->input->post());
+		redirect('../admin/products');
+	}
 	function log_out() {
 		$this->session->sess_destroy();
 		redirect('../sacramento/');
 	}
-
 }
 
 

@@ -1,4 +1,3 @@
-
 <link rel="stylesheet" href="../assets/styles/style_adminpage.css">
 
 <div class="nav-side-menu">

@@ -27,9 +27,23 @@ class Admins extends CI_Model {
 		$this->load->database();
 		return $this->db->query("SELECT * FROM suggestion order by created_at")->result_array();
 	}
+	public function remove_product($post) {
+		$this->load->database();
+		$this->db->query("DELETE FROM `sacramento`.`products` WHERE `id`=?", array($post['id']));
+	}
+	public function remove_box($post) {
+		$this->load->database();
+		$this->db->query("DELETE FROM `sacramento`.`boxes` WHERE `id`=?", array($post['id']));
+	}
+	public function get_product($id) {
+		$this->load->database();
+		return $this->db->query("SELECT * FROM products WHERE id = ?", array($id))->row_array();
+	}
+	public function update($post) {
+		$this->load->database();
+		$query = "UPDATE `sacramento`.`products` SET `name`=?, `description`=?, `box`=?, `updated_at`= NOW() WHERE `id`=?";
+		$values = [$post['name'], $post['description'], $post['preselected_box'], $post['id']];
+		$this->db->query($query, $values);
+	}
 }
-
-
-
-
  ?>

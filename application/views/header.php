@@ -97,7 +97,7 @@ color: black !important;
    </style>
  <!-- // <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script> -->
  <nav id="nav" class="navbar navbar-default">
- <img src="../assets/img/company_logo.png" width=100 height=100 class="img_header">
+ <a href="/"><img src="../assets/img/company_logo.png" width=100 height=100 class="img_header"></a>
  <p class="p_header">Sacramento In A Box</p>
  <ul id="nav_options" class="nav nav-pills pull-right">
 <?php $index='';$faq='';$suggestions='';$shop='';$in_the_box='';$contact='';$cart='';

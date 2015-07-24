@@ -6,15 +6,29 @@
     <title>Sacramento Box Admin</title>
 
     <!-- Bootstrap core CSS -->
+    <!--Google Fonts-->
+    <link href='http://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700' rel='stylesheet' type='text/css'>
     <link href="../assets/dashboard/assets/css/bootstrap.css" rel="stylesheet">
     <!--external css-->
     <link href="../assets/dashboard/assets/font-awesome/css/font-awesome.css" rel="stylesheet" />
     <link rel="stylesheet" type="text/css" href="../assets/dashboard/assets/css/zabuto_calendar.css">
     <link rel="stylesheet" type="text/css" href="../assets/dashboard/assets/js/gritter/css/jquery.gritter.css" />
-    <link rel="stylesheet" type="text/css" href="../assets/dashboard/assets/lineicons/style.css">    
+    <link rel="stylesheet" type="text/css" href="../assets/dashboard/assets/lineicons/style.css"> 
+    <link href="../assets/index/css/font-awesome.min.css" rel="stylesheet" media="screen">
+    <link href="../assets/index/css/icon-moon.css" rel="stylesheet" media="screen">
+    <!--Animations-->
+    <link href="../assets/index/css/animate.css" rel="stylesheet" media="screen">
+    <!--Theme Styles-->
+    <link href="../assets/index/css/theme-styles.css" rel="stylesheet" media="screen">
+    <!--Color Schemes-->
+    <link class="color-scheme" href="../assets/index/css/colors/color-default.css" rel="stylesheet" media="screen">
 </script>
     <style>
     /* Instagram formatting */
+    #instagram_pos{
+      margin-left: -27px;
+      margin-top: -10px;
+    }
     iframe{
      margin-left: 8%;
      
@@ -23,6 +37,7 @@
       display: inline-block;
       font-size: 60px;
       position: absolute;
+      margin-left: 74px;
     }
     #cut_twitter{
       height: 270px;
@@ -34,7 +49,9 @@
       height: auto;
     }
     #weather_area{
+      margin-top: -5px;
       margin-left: -5%;
+      height: 210px;
      overflow: hidden;
       width: 100%;
     }
@@ -58,6 +75,8 @@
   </head>
 
   <body>
+    <!--Page Preloading-->
+    <div id="preloader"><div id="spinner"></div></div>
   <!-- Tracking package -->
 <div id="as-root"></div><script>(function(e,t,n){var r,i=e.getElementsByTagName(t)[0];if(e.getElementById(n))return;r=e.createElement(t);r.id=n;r.src="//button.aftership.com/all.js";i.parentNode.insertBefore(r,i)})(document,"script","aftership-jssdk")</script>
 <?php include 'navbar.php'; ?>
@@ -92,7 +111,7 @@
                     <h5>Weather</h5>
                       			</div>
 								  <div id="weather_area">
-                  <iframe id="forecast_embed" type="text/html" frameborder="0" height="225" width="100%" src="http://forecast.io/embed/#lat=42.3583&lon=-71.0603&name=Sacramento"> </iframe>
+                  <iframe id="forecast_embed" type="text/html" frameborder="0" height="225" width="825" src="http://forecast.io/embed/#lat=42.3583&lon=-71.0603&name=Sacramento"> </iframe>
                 </div>
 							</div>
 						</div><!-- /col-md-4 -->
@@ -119,10 +138,11 @@
                 <div class="darkblue-header">
                     <h5>Instagram</h5>
                 </div>
-				
+				        <div id="instagram_pos">
                <!-- www.intagme.com -->
-                  <iframe src="http://www.intagme.com/in/?u=dmlzaXRzYWNyYW1lbnRvfHNsfDI3MHwxfDF8fG5vfDV8dW5kZWZpbmVkfG5v" allowTransparency="true" frameborder="0" scrolling="no" style="border:none; overflow:hidden; width:200px; height: 200px" ></iframe>
-						  </div> 
+                  <iframe src="http://www.intagme.com/in/?u=dmlzaXRzYWNyYW1lbnRvfHNsfDI3MHwxfDF8fG5vfDV8dW5kZWZpbmVkfG5v" allowTransparency="true" frameborder="0" scrolling="no" style="border:none; overflow:hidden; width:250px; height: 200px" ></iframe>
+						    </div>
+              </div> 
             </div><!-- /col-md-4 -->
 						
 						<div class="col-md-4 col-sm-4 mb">
@@ -132,7 +152,7 @@
 									<h5>Track a Package</h5>
 								</div>
                 <img id="search_img" src="../assets/img/search.png" alt="search img" width=50 height=50>
-                <div class="as-track-button" data-size="large" data-responsive="false" data-width="230px"></div>
+                <div class="as-track-button" data-size="large" data-responsive="false" data-width="245px"></div>
 							</div>
 						</div><!-- /col-md-4 -->
 						
@@ -157,7 +177,7 @@
                 $counter = 0;
                 foreach ($suggestions as $suggestion)
                     {
-                      if ($counter < min(count($suggestions), 5))
+                      if ($counter < min(count($suggestions), 3))
                       {
                 ?>
                         <!--  Action -->
@@ -181,79 +201,40 @@
                     }
                 ?> 
 
-                      <!-- First Action -->
-<!--                       <div class="desc">
-                      	<div class="thumb">
-                      		<span class="badge bg-theme"><i class="fa fa-clock-o"></i></span>
-                      	</div>
-                      	<div class="details">
-                      		<p><muted>2 Minutes Ago</muted><br/>
-                      		   <a href="#">James Brown</a> subscribed to your newsletter.<br/>
-                      		</p>
-                      	</div>
-                      </div>
-                      <! Second Action -->
-<!--                       <div class="desc">
-                      	<div class="thumb">
-                      		<span class="badge bg-theme"><i class="fa fa-clock-o"></i></span>
-                      	</div>
-                      	<div class="details">
-                      		<p><muted>3 Hours Ago</muted><br/>
-                      		   <a href="#">Diana Kennedy</a> purchased a year subscription.<br/>
-                      		</p>
-                      	</div>
-                      </div> -->
-                      <!-- Third Action -->
-<!--                       <div class="desc">
-                      	<div class="thumb">
-                      		<span class="badge bg-theme"><i class="fa fa-clock-o"></i></span>
-                      	</div>
-                      	<div class="details">
-                      		<p><muted>7 Hours Ago</muted><br/>
-                      		   <a href="#">Brandon Page</a> purchased a year subscription.<br/>
-                      		</p>
-                      	</div>
-                      </div> -->
-                      <!-- Fourth Action -->
-<!--                       <div class="desc">
-                      	<div class="thumb">
-                      		<span class="badge bg-theme"><i class="fa fa-clock-o"></i></span>
-                      	</div>
-                      	<div class="details">
-                      		<p><muted>11 Hours Ago</muted><br/>
-                      		   <a href="#">Mark Twain</a> commented your post.<br/>
-                      		</p>
-                      	</div>
-                      </div> -->
-                      <!-- Fifth Action -->
-<!--                       <div class="desc">
-                      	<div class="thumb">
-                      		<span class="badge bg-theme"><i class="fa fa-clock-o"></i></span>
-                      	</div>
-                      	<div class="details">
-                      		<p><muted>18 Hours Ago</muted><br/>
-                      		   <a href="#">Daniel Pratt</a> purchased a wallet in your store.<br/>
-                      		</p>
-                      	</div>
-                      </div> -->
-
                        
-                        <!-- CALENDAR-->
-                        <div id="calendar" class="mb">
-                            <div class="panel green-panel no-margin">
-                                <div class="panel-body">
-                                    <div id="date-popover" class="popover top" style="cursor: pointer; disadding: block; margin-left: 33%; margin-top: -50px; width: 175px;">
-                                        <div class="arrow"></div>
-                                        <h3 class="popover-title" style="disadding: none;"></h3>
-                                        <div id="date-popover-content" class="popover-content"></div>
-                                    </div>
-                                    <div id="my-calendar"></div>
-                                </div>
-                            </div>
-                        </div><!-- / calendar -->
+                        <!-- Contact Message-->
+                <h3>MESSAGES</h3>
+                <?php 
+                $counter = 0;
+                foreach ($contact as $message)
+                    {
+                      if ($counter < min(count($suggestions), 3))
+                      {
+                ?>
+                        <!--  Action -->
+                        <div class="desc">
+                          <div class="thumb">
+                            <span class="badge bg-theme"><i class="fa fa-clock-o"></i></span>
+                          </div>
+                          <div class="details">
+                            <p><muted><?= date("Y-m-d, H:i", strtotime($message['created_at'])) ?></muted><br/>
+                               <a href="#"><?= $message['name'] ?>: </a><?= $message['message'] ?><br/>
+                            </p>
+                          </div>
+                        </div>
+                <?php  
+                      }
+                      else 
+                      {
+                        break;
+                      }
+                      $counter += 1;
+                    }
+                ?> 
+       
                       
                   </div><!-- /col-lg-3 -->
-              </div><! --/row -->
+              </div>
           </section>
       </section>
 
@@ -290,6 +271,8 @@
     <!--script for this page-->
     <script src="../assets/dashboard/assets/js/sparkline-chart.js"></script>    
 	 <script src="../assets/dashboard/assets/js/zabuto_calendar.js"></script>	
+   <!--Libraries and Plugins-->
+        <script src="../assets/index/js/landing2.js"></script>
 	
 	
 	<script type="application/javascript">

@@ -1,5 +1,5 @@
 <?php
-// var_dump($this->session->all_userdata());
+var_dump($this->session->all_userdata());
 // var_dump($products);
 // var_dump($carts);
 // var_dump($this->session->flashdata('errors'));
@@ -118,7 +118,7 @@ function this_page()
 							  <tr>
 								  <td><?= $value['box'] ?></td>
 								  <td><?php $keys = array_keys($value);
-								  for($i = 2; $i < count($keys); $i++) {
+								  for($i = 3; $i < count($keys); $i++) {
 								  	?><p><?= $keys[$i] ?></p>
 								  <?php } ?>
 								  </td>

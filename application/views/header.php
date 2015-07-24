@@ -1,5 +1,5 @@
 <?php
- 
+
     $location=this_page();
  ?>
 <style type="text/css">
@@ -95,12 +95,12 @@ color: black !important;
  color: white !important;
 }
    </style>
- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+ <!-- // <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script> -->
  <nav id="nav" class="navbar navbar-default">
  <img src="../assets/img/company_logo.png" width=100 height=100 class="img_header">
  <p class="p_header">Sacramento In A Box</p>
  <ul id="nav_options" class="nav nav-pills pull-right">
-<?php $index='';$faq='';$suggestions='';$shop='';$in_the_box='';$contact='';
+<?php $index='';$faq='';$suggestions='';$shop='';$in_the_box='';$contact='';$cart='';
       switch ($location)
       {
         case 'index':
@@ -121,6 +121,8 @@ color: black !important;
         case 'contact':
         $contact="id='nav_list' class='active'";
         break;
+        $cart="id='nav_list' class='active'";
+        break;
       }
 
 
@@ -133,6 +135,6 @@ color: black !important;
    <li <?= $suggestions ?>><a href="suggestions" class="white_href_header">Suggestions</a></li>
    <li <?= $in_the_box ?>><a href="in_the_box" class="white_href_header">What's in the box?</a></li>
    <li <?= $contact ?>><a href="contact" class="white_href_header">Contact Us</a></li>
-   </ul>
+   <li <?= $cart ?>><a href="cart" class="white_href_header">Cart</a></li>
  </ul>
  </nav>

@@ -18,6 +18,7 @@ class sacramento_model extends CI_Model {
 		$this->load->database();
 		return $this->db->query("SELECT * FROM boxes WHERE id = ?", array($id))->result_array();
 	}
+	public function add_user($post) {}
 }
 
  ?>

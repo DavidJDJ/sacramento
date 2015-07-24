@@ -64,6 +64,27 @@ class sacramento_model extends CI_Model {
 		$this->db->query("INSERT INTO suggestion (name, suggestion, created_at)
 						VALUES (?,?,NOW())", array($post['name'], $post['suggestion']));
 	}
+	public function add_order($post, $session) {
+		$this->load->database();
+		$query_user = "INSERT INTO `sacramento`.`users` (`first_name`, `last_name`, `email`, `level`, `token`, `updated_at`, `created_at`) VALUES (?, ?, ?, 'user', ?, NOW(), NOW())";
+		$values_user = [$post['first_name'], $post['last_name'], $post['email'], $post['stripeToken']];
+		$this->db->query($query_user, $values_user);
+		$query_address = "INSERT INTO `sacramento`.`address` (`line_1`, `line_2`, `city`, `state`, `zip`, `user_id`) VALUES (?, ?, ?, ?, ?, (SELECT id FROM users where token = ?))";
+		$values_address = [$post['address_1'], $post['address_2'], $post['city'], $post['state'], $post['zip'], $post['stripeToken']];
+		$this->db->query($query_address, $values_address);
+		$query_orders = "INSERT INTO `sacramento`.`orders` (`user_id`, `status`) VALUES ((SELECT id FROM users where token = ?), 'ordered')";
+		$query_values = [$post['stripeToken']];
+		$this->db->query($query_orders, $query_values);
+		$carts = $this->session->userdata('cart');
+		foreach ($carts as $cart => $value) {
+			$keys = array_values($value);
+			for ($i=3; $i < count($keys); $i++) {
+				$query_orders_products = "INSERT INTO `sacramento`.`orders_products` (`order_id`, `product_id`, `box`) VALUES ((SELECT id FROM orders WHERE user_id = (SELECT id FROM users where token = ?)), ?, ?)";
+				$values_orders_products = [$post['stripeToken'], $keys[$i], $value['box']];
+				$this->db->query($query_orders_products, $values_orders_products);
+			}
+		}
+	}
 }
 
  ?>

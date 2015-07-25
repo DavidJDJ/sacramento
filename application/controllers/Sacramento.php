@@ -51,7 +51,7 @@ class Sacramento extends CI_Controller {
 					$this->session->set_userdata('cart', $result);
 				}
 			}
-			redirect('../sacramento/cart');
+			redirect('../../sacramento/cart');
 		}
 		public function cart() {
 			$this->load->model('sacramento_model');

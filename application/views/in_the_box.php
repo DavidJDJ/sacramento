@@ -34,7 +34,7 @@ function this_page()
         <div class="row">
             <?php foreach ($products as $product) { ?>
                 <div class="col-md-3 text-center">
-                    <img class="product_image" src="../<?= $product['image'] ?>">
+                    <img class="product_image" src="<?= $product['image'] ?>">
                     <p><?= $product['name'] ?></p>
                 </div>
             <?php } ?>

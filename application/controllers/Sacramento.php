@@ -35,7 +35,7 @@ class Sacramento extends CI_Controller {
 		{
 		$this->load->model('sacramento_model');
 		$box_result = $this->sacramento_model->get_box($id);
-		$product_result = $this->sacramento_model->products();
+		$product_result = $this->sacramento_model->products_by_box_id($id);
 		$this->load->view('box_content', array('box' => $box_result, 'products' => $product_result));
 		}
 		public function add_cart() {
@@ -67,10 +67,11 @@ class Sacramento extends CI_Controller {
 	}
 	public function admin() {
 		if ($this->session->userdata('logged_in') == TRUE) {
-			// echo "Admin is logged in";
-			// var_dump($this->session->all_userdata());
-			redirect('../admin/');
+			echo "Admin is logged in";
+			var_dump($this->session->all_userdata());
+			redirect('admin');
 		} else {
+			echo "here";
 		$this->load->view('admin');
 		}
 	}

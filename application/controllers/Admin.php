@@ -10,7 +10,7 @@ class admin extends CI_Controller {
 			$contact=$this->admins->fetch_contact();
 			$this->load->view('admin_views/dashboard', array('suggestions' => $suggestions,'contact'=>$contact));
 		} else {
-		$this->load->view('sacramento/admin');
+		$this->load->view('admin_views/admin');
 		}
 	}
 	function login() {
@@ -19,7 +19,7 @@ class admin extends CI_Controller {
 		$this->form_validation->set_rules("password", 'password', "trim|required");
 		if ($this->form_validation->run() == FALSE) {
 			$this->session->set_flashdata('errors', validation_errors());
-			redirect('../sacramento/admin');
+			redirect('admin');
 		} else {
 			$this->load->model('admins');
 			$result = $this->admins->admin_user($this->input->post('email'));
@@ -28,10 +28,10 @@ class admin extends CI_Controller {
 			if ($result['password'] == md5($this->input->post('password') . '' . $result['salt'])) {
 				$this->session->set_userdata($result);
 				$this->session->set_userdata('logged_in', TRUE);
-				redirect('admin/');
+				redirect('admin');
 			} else {
 				$this->session->set_flashdata('errors', "Incorrect password");
-				redirect('../sacramento/admin');
+				redirect('admin');
 			}
 		}
 	}
@@ -248,24 +248,24 @@ class admin extends CI_Controller {
 	}
 	function log_out() {
 		$this->session->sess_destroy();
-		redirect('../sacramento/');
+		redirect('/');
 	}
 
-public function pagination_products()
+public function pagination_products($item_per_page)
 	{
         $page_number = $this->input->post('page_number');
-        $item_par_page = 2;
+        // $item_per_page = 2;
         $this->load->model('admins');
-        // $position = ($page_number*$item_par_page);
+        // $position = ($page_number*$item_per_page);
         // $this->load->database();
-        // $result_set = $this->db->query("SELECT * FROM products LIMIT ".$position.",".$item_par_page);
-        $result_set = $this->admins->pagination_fetch_products_per_page($page_number, $item_par_page);
+        // $result_set = $this->db->query("SELECT * FROM products LIMIT ".$position.",".$item_per_page);
+        $result_set = $this->admins->pagination_fetch_products_per_page($page_number, $item_per_page);
         // var_dump($result_set);
         $total_set =  $result_set->num_rows();
         $page =  $this->db->get('products') ;
         $total =  $page->num_rows();
         //break total recoed into pages
-        $total = ceil($total/$item_par_page);
+        $total = ceil($total/$item_per_page);
         if($total_set>0){
             $entries = null;
     // get data and store in a json array
@@ -283,21 +283,21 @@ public function pagination_products()
          
    }
 
-   public function pagination_boxes()
+   public function pagination_boxes($item_per_page)
 	{
         $page_number = $this->input->post('page_number');
-        $item_par_page = 2;
+        // $item_per_page = 2;
         $this->load->model('admins');
-        // $position = ($page_number*$item_par_page);
+        // $position = ($page_number*$item_per_page);
         // $this->load->database();
-        // $result_set = $this->db->query("SELECT * FROM products LIMIT ".$position.",".$item_par_page);
-        $result_set = $this->admins->pagination_fetch_boxes_per_page($page_number, $item_par_page);
+        // $result_set = $this->db->query("SELECT * FROM products LIMIT ".$position.",".$item_per_page);
+        $result_set = $this->admins->pagination_fetch_boxes_per_page($page_number, $item_per_page);
         // var_dump($result_set);
         $total_set =  $result_set->num_rows();
-        $page =  $this->db->get('products') ;
+        $page =  $this->db->get('boxes') ;
         $total =  $page->num_rows();
         //break total recoed into pages
-        $total = ceil($total/$item_par_page);
+        $total = ceil($total/$item_per_page);
         if($total_set>0){
             $entries = null;
     // get data and store in a json array

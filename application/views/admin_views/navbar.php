@@ -18,7 +18,7 @@
 				<a href="../admin/shipped" class="dash_link"><li>Shipped</li></a>
 			</ul>
 			<li data-toggle="collapse" data-target="#service" class="collapsed">
-			  <a href="#">Products/Boxes<span class="arrow"></span></a>
+			  <a href="#">Products and Boxes<span class="arrow"></span></a>
 			</li>
 			<ul class="sub-menu collapse" id="service">
 			  <a href="../admin/products" class="dash_link"><li>Products</li></a>

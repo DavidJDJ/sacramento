@@ -52,7 +52,7 @@
                  <?php foreach ($boxes as $box) { ?>
                      <div class="col-md-4 text-center">
                          <a href="/sacramento/show_box/<?= $box['id'] ?>">
-                             <img src="../<?= $box['img'] ?>" class="product_images">
+                             <img src="<?= $box['img'] ?>" class="product_images">
 
                              <p><?= $box['name'] ?></p>
                          </a>

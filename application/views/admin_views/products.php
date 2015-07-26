@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
@@ -12,6 +11,9 @@
 </head>
 
 <body>
+      <div id="preloader"><div id="spinner"></div></div>
+
+<?php include 'navbar.php'; ?>
 
     <div class="container">
     
@@ -54,38 +56,40 @@
                          var total_page =null;
                          var sr =0;
                          var sr_no =0;
+                         var item_per_page = 2;
         
     
-                        var getReport = function(page_number){
-                            if(page_number==0){
-                                $("#previous").prop('disabled', true);}
-                                else{
-                                    $("#previous").prop('disabled', false);}
-
-                            if(page_number==(total_page-1)){
-                                $("#next").prop('disabled', true);}
-                                else{
-                                    $("#next").prop('disabled', false);}
-
-                             $("#page_number").text(page_number+1);
-        
+                        var getReport = function(page_number){       
                                  $.ajax({
-                                     url:"/admin/pagination_products",
+                                     url:"/admin/pagination_products/"+item_per_page,
                                      type:"POST",
                                      dataType: 'json',
                                      data:'page_number='+page_number,
                                      success:function(data){
-                                      console.log(data[0].Rows);
-                                         window.mydata = data;
-                                          total_page= mydata[0].TotalRows;
-                                         $("#total_page").text(total_page);
-                                         var record_par_page = mydata[0].Rows;
-                                          $.each(record_par_page, function (key, data) {
-                                               console.log(key);
-                                               console.log(record_par_page[key].id);
-                                               sr =(key+1);    
-                                                $(".tb").append('<tr><td>'+sr+'</td><td>'+data.image+'</td><td>'+data.name+'</td><td>'+data.description+'</td><td>'
-                                                  +"<a class='btn btn-default' href='edit_product/"+ record_par_page[key].id + "' role='button'>Edit</a><a class='btn btn-default' href='remove_product/"+ record_par_page[key].id + "' role='button'>Remove</a>"           
+                                      if(page_number==0){
+                                      $("#previous").prop('disabled', true);}
+                                      else{
+                                      $("#previous").prop('disabled', false);}
+                                      window.mydata = data;
+
+                                      total_page= mydata[0].TotalRows;
+
+                                      if(page_number==(total_page-1)){
+                                          $("#next").prop('disabled', true);}
+                                      else{
+                                          $("#next").prop('disabled', false);}
+
+                                      $("#page_number").text(page_number+1);
+                                      $("#total_page").text(total_page);
+                                      var record_per_page = mydata[0].Rows;
+                                      $.each(record_per_page, function (key, data) {
+                                               // console.log(key);
+                                               console.log(record_per_page[key].id);
+                                               sr =(key+1);   
+                                               sr_no = sr + page_number * item_per_page; 
+                                                $(".tb").append('<tr><td>'+sr_no+'</td><td>'+"<img src="+data.image+" width=200 height=200>"
+                                                  +'</td><td>'+data.name+'</td><td>'+data.description+'</td><td>'
+                                                  +"<a class='btn btn-default' href='edit_product/"+ record_per_page[key].id + "' role='button'>Edit</a><a class='btn btn-default' href='remove_product/"+ record_per_page[key].id + "' role='button'>Remove</a>"           
                                                   +'</td></tr>');
 
                               
@@ -106,8 +110,8 @@
 //                                         window.mydata = data;
 //                                          total_page= mydata[0].TotalRows;
 //                                         $("#total_page").text(total_page);
-//                                         var record_par_page = mydata[0].Rows;
-//                                          $.each(record_par_page, function (key, data) {
+//                                         var record_per_page = mydata[0].Rows;
+//                                          $.each(record_per_page, function (key, data) {
 //                                               sr =(key+1);    
 //                                                $(".tb").append('<tr><td>'+sr+'</td><td>'+data.id+'</td><td>'+data.name+'</td></tr>');
 //                                           });

@@ -13,7 +13,7 @@ class sacramento_model extends CI_Model {
 	public function products() {
 		$this->load->database();
 		return $this->db->query('SELECT * FROM products')->result_array();
-	}	
+	}
 	public function products_by_box_id($id) {
 		$this->load->database();
 		return $this->db->query("SELECT * FROM products WHERE box = ?", array($id))->result_array();
@@ -36,7 +36,7 @@ class sacramento_model extends CI_Model {
 	{
 		$this->load->database();
 		return $this->db->query("SELECT orders.user_id as user_id, orders.id as order_id,
-								orders.review_id, orders.status, address.*
+							 	orders.status, address.*
 								FROM orders left join address
 								on orders.user_id =  address.user_id
 								where orders.status != 'shipped'
@@ -48,7 +48,7 @@ class sacramento_model extends CI_Model {
 	{
 		$this->load->database();
 		return $this->db->query("SELECT orders.user_id as user_id, orders.id as order_id,
-								orders.review_id, orders.status, address.*
+								 orders.status, address.*
 								FROM orders left join address
 								on orders.user_id =  address.user_id
 								where orders.status = 'shipped'

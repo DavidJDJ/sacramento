@@ -5,8 +5,8 @@ function this_page()
           $page='cart';
           return $page;
       }
-var_dump($user_products);
-var_dump($products);
+// var_dump($user_products);
+// var_dump($products);
 ?>
 <html lang="en">
   <head>
@@ -58,11 +58,8 @@ var_dump($products);
                       <td>
                       <table>
                           <?php $user_product = array_values($value);
-                        //   var_dump($user_product);
-                                for ($i=3; $i < count($user_product); $i++) {
+                                for ($i=3; $i < count($user_product)-1; $i++) {
                                     foreach ($products as $product) {
-                                        // echo "var dump of product inside the foreach loop";
-                                        // var_dump($product);
                                         if ($product['id'] == $user_product[$i]) { ?>
                                             <tr>
                                             <td>
@@ -75,8 +72,8 @@ var_dump($products);
                   </table>
               </td>
                       <td><?php $keys = array_keys($value);
-                      for($i = 3; $i < count($keys); $i++) {
-                        ?><p class="product_text"><?= $keys[$i] ?></p>
+                      for($i = 3; $i < count($keys)-1; $i++) {
+                        ?><p class="product_text"><?= str_replace('_', ' ',$keys[$i]) ?></p>
                       <?php } ?>
                       </td>
                   </tr>

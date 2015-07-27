@@ -35,12 +35,15 @@ class Sacramento extends CI_Controller {
 		{
 		$this->load->model('sacramento_model');
 		$box_result = $this->sacramento_model->get_box($id);
-		$product_result = $this->sacramento_model->products_by_box_id($id);
+		$product_result = $this->sacramento_model->products();
 		$this->load->view('box_content', array('box' => $box_result, 'products' => $product_result));
 		}
 		public function add_cart() {
 			if ($this->input->post()) {
-
+				if (count($this->input->post())-4 > $this->input->post('item_amount')) {
+					$this->session->set_flashdata('errors', "<center><h3>You can only choose " . $this->input->post('item_amount') . " items on this box. What about another box?</h3></center>");
+					redirect('sacramento/shop');
+				}
 				if ($this->session->userdata('cart')) {
 
 					$cart = $this->session->userdata('cart');
@@ -67,12 +70,11 @@ class Sacramento extends CI_Controller {
 	}
 	public function admin() {
 		if ($this->session->userdata('logged_in') == TRUE) {
-			echo "Admin is logged in";
-			var_dump($this->session->all_userdata());
+			// var_dump($this->session->all_userdata());
 			redirect('admin');
 		} else {
 			echo "here";
-		$this->load->view('admin');
+		$this->load->view('admin_views/admin');
 		}
 	}
 	public function confirmation() {
@@ -102,7 +104,7 @@ class Sacramento extends CI_Controller {
 		$products = $this->sacramento_model->products();
 		$user_products = $this->session->all_userdata();
 		$this->load->view('order_confirmation', array('user_products' => $user_products, 'products' => $products));
-		$this->session->sess_destroy();
+		// $this->session->sess_destroy();
 	}
 
 	public function add_suggestion()

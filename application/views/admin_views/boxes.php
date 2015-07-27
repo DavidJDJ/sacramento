@@ -19,10 +19,10 @@
             </div>
             <div class="col-md-6">
             </div>
-        </div>      
+        </div>
 
     <table class="table" style="height: 452px;">
-<h2>Boxes</h2>        
+<h2>Boxes</h2>
         <thead>
             <tr>
               <th>No.</th>
@@ -47,21 +47,21 @@
     </div>
 
     <div style="text-align: center">
-        
+
     <img id="load_ajax_png" src="http://sanwebe.com/assets/ajax-load-more-results/ajax-loader.gif" alt="loading" style="display: none"/>
     </div>
     </div>
 
-    
+
     <script>
                          var page_number=0;
                          var total_page =null;
                          var sr =0;
                          var sr_no =0;
                          var item_per_page = 2;
-        
-    
-                        var getReport = function(page_number){       
+
+
+                        var getReport = function(page_number){
                                  $.ajax({
                                      url:"/admin/pagination_boxes/"+item_per_page,
                                      type:"POST",
@@ -87,20 +87,20 @@
                                       $.each(record_per_page, function (key, data) {
                                                // console.log(key);
                                                // console.log(record_per_page[key].id);
-                                        sr =(key+1);    
-                                        sr_no = sr + page_number * item_per_page;                                        
-                                        $(".tb").append('<tr><td>'+sr_no+'</td><td>'+"<img src="+data.img+" width=200 height=200>"
+                                        sr =(key+1);
+                                        sr_no = sr + page_number * item_per_page;
+                                        $(".tb").append('<tr><td>'+sr_no+'</td><td>'+"<img src='../"+data.img+"' width=200 height=200>"
                                           +'</td><td>'+data.name+'</td><td>'+data.item_amount+'</td><td>'+data.price+'</td><td>'
-                                          +"<a class='btn btn-default' href='edit_product/"+ record_per_page[key].id + "' role='button'>Edit</a><a class='btn btn-default' href='remove_product/"+ record_per_page[key].id + "' role='button'>Remove</a>"           
+                                          +"<a class='btn btn-default' href='edit_product/"+ record_per_page[key].id + "' role='button'>Edit</a><a class='btn btn-default' href='remove_product/"+ record_per_page[key].id + "' role='button'>Remove</a>"
                                           +'</td></tr>');
 
-                              
-                                                
+
+
                                         });
                                       }
                                  });
                                };
-                               
+
                                var search = function (str){
                                if(str!=''){
 //                                   $.ajax({
@@ -114,7 +114,7 @@
 //                                         $("#total_page").text(total_page);
 //                                         var record_per_page = mydata[0].Rows;
 //                                          $.each(record_per_page, function (key, data) {
-//                                               sr =(key+1);    
+//                                               sr =(key+1);
 //                                                $(".tb").append('<tr><td>'+sr+'</td><td>'+data.id+'</td><td>'+data.name+'</td></tr>');
 //                                           });
 //                                      }
@@ -122,9 +122,9 @@
                                }
                                };
 
-                          
+
                        $(document).ready(function(e){
-                       
+
                           getReport(page_number);
                           // console.log(sr);
                           // console.log(total_page);
@@ -133,19 +133,19 @@
                                page_number = (page_number+1);
                                getReport(page_number);
                                console.log(sr);
-                               
+
                          });
-                            
+
                          $("#previous").on("click", function(){
                               $(".tb").html("");
                               page_number = (page_number-1);
                               getReport(page_number);
                          });
-                         
-                         
+
+
                          $("#search").on('keyup', function(){
                              var str = $.trim($(this).val());
-                             
+
                                 search(str);
                          });
                     });

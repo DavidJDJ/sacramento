@@ -40,6 +40,9 @@
          {
           background-color: #232F3E;
           z-index: 0;
+          margin-bottom: 0px;
+          border: none;
+          border-radius: 0px;
          }
          .img_header{
            margin-left: 40px;
@@ -72,7 +75,7 @@
           margin-left: 47px;
          }
 
-       
+
            </style>
          <nav id="nav" class="navbar navbar-default">
          <img src="../assets/img/company_logo.png" width=100 height=100 class="img_header">
@@ -130,7 +133,7 @@
               <div class="col-lg-4 col-md-4 col-sm-4 animated fadeInDown">
                 <h2 style="margin-top:70px;" class="text-light text-left">Send the gift of Sacramento, in a Box!</h2>
                 <p>We bring the best of Sacramento's food and snacks to people around the country.</p>
-                
+
                 <a class="btn btn-primary" href="sacramento/shop">Shop All Products</a>
               </div>
               <div class="col-lg-8 col-md-8 col-sm-8 animated fadeInRight">

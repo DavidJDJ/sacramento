@@ -26,6 +26,9 @@
     .image_social_footer {
         display: inline-block;
     }
+    .row {
+        width: 100%;
+    }
    </style>
  <div class="footer">
   <center><i id="footer_text">Made with &lt;3 in Sacramento</i></center>

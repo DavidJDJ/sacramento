@@ -37,6 +37,9 @@
   margin: 0 auto;
   text-align: center;
 }
+#nav_options{
+  font-family: sans-serif;
+}
 .uppercase {
   text-transform: uppercase;
 }

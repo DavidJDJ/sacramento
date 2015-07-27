@@ -77,6 +77,10 @@ function this_page()
 	margin: 25px;
 	padding: 30px;
 	}
+    /* button format */
+    .btn-primary{
+        background: #3e2d23;
+    }
 	label {
 	display: inline-block;
 	width: 100px;

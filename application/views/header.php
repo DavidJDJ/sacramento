@@ -23,6 +23,7 @@
    display: inline-block;
    font-size: 28px;
    margin-right: 20px;
+   font-family: sans-serif;
  }
  #cart{
    text-decoration: none;

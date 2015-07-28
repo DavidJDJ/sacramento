@@ -73,7 +73,6 @@ class Sacramento extends CI_Controller {
 			// var_dump($this->session->all_userdata());
 			redirect('admin');
 		} else {
-			echo "here";
 		$this->load->view('admin_views/admin');
 		}
 	}

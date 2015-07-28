@@ -161,7 +161,7 @@ class admin extends CI_Controller {
 			} else {
 				if ($_FILES["image"]["tmp_name"]) {
 
-					$target_dir = "/assets/uploads/";
+					$target_dir = "../assets/uploads/";
 					$target_file = $target_dir . basename($_FILES["image"]["name"]);
 					$uploadOk = 1;
 					$imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);

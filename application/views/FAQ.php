@@ -29,7 +29,7 @@
     @import url(http://fonts.googleapis.com/css?family=Open+Sans:300,800);
 
 body {
-  
+
   font-size: 1.5em;
   background-color: white !important;
 }

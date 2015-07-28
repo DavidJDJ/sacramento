@@ -161,7 +161,7 @@ class admin extends CI_Controller {
 			} else {
 				if ($_FILES["image"]["tmp_name"]) {
 
-					$target_dir = "assets/uploads/";
+					$target_dir = "/assets/uploads/";
 					$target_file = $target_dir . basename($_FILES["image"]["name"]);
 					$uploadOk = 1;
 					$imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
@@ -220,12 +220,12 @@ class admin extends CI_Controller {
 		$result = $this->admins->get_product($id);
 		$boxes = $this->admins->boxes_name();
 		$this->load->view('admin_views/edit_product', array('product' => $result, 'boxes' => $boxes));
-	}	
+	}
 	function remove_product($id) {
 		$this->load->model('admins');
 		$this->admins->remove_product_by_id($id);
 		redirect('../../admin/products');
-		}	
+		}
 
 	function edit_box($id) {
 		$this->load->model('admins');
@@ -240,7 +240,7 @@ class admin extends CI_Controller {
 		$this->load->model('admins');
 		$this->admins->update_product($this->input->post());
 		redirect('../admin/products');
-	}	
+	}
 	function update_box() {
 		$this->load->model('admins');
 		$this->admins->update_box($this->input->post());
@@ -275,12 +275,12 @@ public function pagination_products($item_per_page)
             $data = array(
                 'TotalRows' => $total,
                 'Rows' => $entries
-            );              
+            );
             $this->output->set_content_type('application/json');
             echo json_encode(array($data));
         }
         exit;
-         
+
    }
 
    public function pagination_boxes($item_per_page)
@@ -307,15 +307,15 @@ public function pagination_products($item_per_page)
             $data = array(
                 'TotalRows' => $total,
                 'Rows' => $entries
-            );              
+            );
             $this->output->set_content_type('application/json');
             echo json_encode(array($data));
         }
         exit;
-         
+
    }
 }
- 
+
 
 
 

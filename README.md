@@ -4,14 +4,13 @@ E-comerce site created in PHP using CodeIgniter framework.
 
 ## Requirements
 
-PHP version 5.4 or newer is recommended.
-MySQL Database.
+PHP version 5.4 or newer is recommended and MySQL Database.
 
 # Features
 
 * Admin dashboard with different API's
 	* Instagram API
-	* Forecast tracking API
+	* Forecast.io weather API
 	* Twitter API
 	* Package tracking
 	* Messages and suggestions display
